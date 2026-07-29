@@ -1,4 +1,4 @@
-# Cosoulutions Landing Page
+# Cosoulutions — Sé tu propio coach
 
 Wireframe y diseño del landing page para "Sé tu propio coach"
 
