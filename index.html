@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Wireframe — Sé tu propio coach</title>
+<style>
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    background: #F1EFE8;
+    margin: 0;
+    padding: 32px 16px 60px;
+    color: #2C2C2A;
+  }
+  .wrap { max-width: 640px; margin: 0 auto; }
+  .doc-title { font-size: 20px; font-weight: 600; margin: 0 0 2px; color: #26215C; }
+  .doc-sub { font-size: 13px; color: #5F5E5A; margin: 0 0 24px; }
+  .card { border: 1px solid #D3D1C7; border-radius: 12px; padding: 16px 18px; margin-bottom: 12px; background: #FFFFFF; }
+  .label { font-size: 11px; color: #888780; margin: 0 0 8px; text-transform: none; }
+  .dashed { border: 1px dashed #B4B2A9; border-radius: 8px; }
+  .placeholder { color: #888780; font-size: 11px; }
+  .pill { display: inline-block; font-size: 12px; font-weight: 600; padding: 7px 18px; border-radius: 8px; background: #FAC775; color: #633806; }
+  .row { display: flex; gap: 12px; align-items: center; }
+  .grid2 { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 8px; }
+  .grid4 { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 6px; }
+  .center { text-align: center; }
+  .quote { font-style: italic; font-size: 13px; margin: 0; }
+  .strike { text-decoration: line-through; color: #888780; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <p class="doc-title">Wireframe — Landing page "Sé tu propio coach"</p>
+  <p class="doc-sub">Proyecto Coachsoultions · Daniel · borrador para revisión</p>
+
+  <div class="card row" style="justify-content:space-between;">
+    <span class="placeholder">[logo Coachsoultions]</span>
+    <span class="pill" style="padding:4px 10px; font-size:11px;">comprar ahora</span>
+  </div>
+
+  <div class="card center">
+    <p class="label">1. hero</p>
+    <p style="font-size:16px; font-weight:600; margin:0 0 6px;">[titular según conflicto específico]</p>
+    <p style="font-size:12px; color:#5F5E5A; margin:0 0 14px;">Método "Sé tu propio coach" — 4 semanas para reconstruir la conversación con tu hijo o hija</p>
+    <div class="grid4" style="margin-bottom:12px;">
+      <div class="dashed center" style="padding:14px 4px;">tomo 1</div>
+      <div class="dashed center" style="padding:14px 4px;">tomo 2</div>
+      <div class="dashed center" style="padding:14px 4px;">tomo 3</div>
+      <div class="dashed center" style="padding:14px 4px;">tomo 4</div>
+    </div>
+    <span class="pill">quiero mis 4 tomos</span>
+  </div>
+
+  <div class="card">
+    <p class="label">2. el problema</p>
+    <div class="row">
+      <div class="dashed center" style="flex:1; min-height:70px; display:flex; align-items:center; justify-content:center;">foto</div>
+      <div style="flex:1;">
+        <p class="quote">"A veces no falta comunicación… falta conexión."</p>
+        <p class="placeholder" style="margin-top:6px;">[dato de respaldo]</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <p class="label">3. qué es y cómo funciona</p>
+    <div class="row">
+      <div class="dashed center" style="flex:1; min-height:60px; display:flex; align-items:center; justify-content:center;">[imagen o video — por definir]</div>
+      <p style="flex:1; font-size:12px; color:#5F5E5A; margin:0;">No es terapia. Es un método de autocoaching guiado por preguntas...</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <p class="label">4. los 4 tomos en detalle</p>
+    <div class="grid2">
+      <div style="border:1px solid #D3D1C7; border-radius:8px; padding:8px;"><p style="font-size:11px; font-weight:600; margin:0;">semana 1</p><p style="font-size:10px; color:#5F5E5A; margin:2px 0 0;">reconocer mi estilo de comunicación</p></div>
+      <div style="border:1px solid #D3D1C7; border-radius:8px; padding:8px;"><p style="font-size:11px; font-weight:600; margin:0;">semana 2</p><p style="font-size:10px; color:#5F5E5A; margin:2px 0 0;">comprender la experiencia escolar de mi hijo/a</p></div>
+      <div style="border:1px solid #D3D1C7; border-radius:8px; padding:8px;"><p style="font-size:11px; font-weight:600; margin:0;">semana 3</p><p style="font-size:10px; color:#5F5E5A; margin:2px 0 0;">escuchar con el corazón y construir confianza</p></div>
+      <div style="border:1px solid #D3D1C7; border-radius:8px; padding:8px;"><p style="font-size:11px; font-weight:600; margin:0;">semana 4</p><p style="font-size:10px; color:#5F5E5A; margin:2px 0 0;">crear hábitos y acompañar en el camino</p></div>
+    </div>
+    <p class="placeholder" style="margin-top:8px;">+60 preguntas guiadas · tiempo por tomo: por confirmar</p>
+  </div>
+
+  <div class="card">
+    <p class="label">5. perfil de Ricardo Cañete</p>
+    <div class="row">
+      <div class="dashed" style="width:48px; height:48px; border-radius:50%; display:flex; align-items:center; justify-content:center; flex-shrink:0; font-size:9px;">foto</div>
+      <div>
+        <p style="font-size:12px; font-weight:600; margin:0;">Ricardo Cañete</p>
+        <p class="placeholder" style="margin-top:2px;">[bio con experiencia y credenciales — pendiente]</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <p class="label">6. testimonios</p>
+    <div class="grid2">
+      <div style="border:1px solid #D3D1C7; border-radius:8px; padding:10px;" class="center"><div class="placeholder">foto</div><p style="font-size:10px; margin:4px 0;">★★★★★</p><p style="font-size:10px; color:#5F5E5A; margin:0;">"[testimonio 1]"</p></div>
+      <div style="border:1px solid #D3D1C7; border-radius:8px; padding:10px;" class="center"><div class="placeholder">foto</div><p style="font-size:10px; margin:4px 0;">★★★★★</p><p style="font-size:10px; color:#5F5E5A; margin:0;">"[testimonio 2]"</p></div>
+      <div style="border:1px solid #D3D1C7; border-radius:8px; padding:10px;" class="center"><div class="placeholder">foto</div><p style="font-size:10px; margin:4px 0;">★★★★★</p><p style="font-size:10px; color:#5F5E5A; margin:0;">"[testimonio 3]"</p></div>
+      <div style="border:1px solid #D3D1C7; border-radius:8px; padding:10px;" class="center"><div class="placeholder">foto</div><p style="font-size:10px; margin:4px 0;">★★★★★</p><p style="font-size:10px; color:#5F5E5A; margin:0;">"[testimonio 4]"</p></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <p class="label">7. ¿es para ti?</p>
+    <div class="row">
+      <div style="flex:1;"><p style="font-size:11px; font-weight:600; margin:0 0 4px;">✓ es para ti si...</p><p style="font-size:10px; color:#5F5E5A; margin:0;">[perfil papá/mamá]</p></div>
+      <div style="flex:1;"><p style="font-size:11px; font-weight:600; margin:0 0 4px;">✕ no es para ti si...</p><p style="font-size:10px; color:#5F5E5A; margin:0;">buscas que alguien te dé la respuesta, no que la encuentres tú</p></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <p class="label">8. precio y oferta</p>
+    <div class="row" style="gap:10px;">
+      <div class="center" style="flex:1; padding:8px; border:1px solid #D3D1C7; border-radius:8px;">
+        <p style="font-size:10px; color:#888780; margin:0;">sesión individual</p>
+        <p class="strike" style="font-size:13px; margin:2px 0 0;">USD 40-70</p>
+      </div>
+      <span style="font-size:16px; color:#888780;">→</span>
+      <div class="center" style="flex:1; padding:8px; border:2px solid #EF9F27; border-radius:8px; background:#FAEEDA;">
+        <p style="font-size:10px; color:#633806; margin:0;">4 tomos completos</p>
+        <p style="font-size:14px; font-weight:600; color:#633806; margin:2px 0 0;">[precio]</p>
+      </div>
+    </div>
+    <p class="placeholder center" style="margin-top:8px;">[garantía — por confirmar]</p>
+  </div>
+
+  <div class="card center">
+    <p class="label">9. cta final</p>
+    <span class="pill">quiero mis 4 tomos</span>
+  </div>
+
+  <div class="card">
+    <p class="label">10. preguntas frecuentes</p>
+    <div style="border-top:1px solid #D3D1C7; padding-top:6px;"><p style="font-size:11px; margin:0;">¿cómo recibo el material?</p></div>
+    <div style="border-top:1px solid #D3D1C7; padding-top:6px; margin-top:6px;"><p style="font-size:11px; margin:0;">¿puedo pagar con tarjeta?</p></div>
+  </div>
+
+  <div class="card center">
+    <p class="label" style="margin:0;">11. footer — marca Coachsoultions · contacto</p>
+  </div>
+
+</div>
+</body>
+</html>
