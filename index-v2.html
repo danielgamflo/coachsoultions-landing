@@ -95,6 +95,61 @@
     justify-content: center;
     color: #888780;
     font-size: 14px;
+    gap: 15px;
+    padding: 40px;
+  }
+
+  .tomo {
+    width: 80px;
+    height: 280px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+    color: white;
+    font-size: 12px;
+    font-weight: 600;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+    transition: transform 0.3s;
+  }
+
+  .tomo:hover {
+    transform: translateY(-8px);
+  }
+
+  .tomo-1 {
+    background: linear-gradient(135deg, #26215C 0%, #3d2f7a 100%);
+    transform: rotateZ(-8deg);
+  }
+
+  .tomo-2 {
+    background: linear-gradient(135deg, #EF9F27 0%, #E08A1A 100%);
+    transform: rotateZ(4deg);
+  }
+
+  .tomo-3 {
+    background: linear-gradient(135deg, #26215C 0%, #3d2f7a 100%);
+    transform: rotateZ(-6deg);
+  }
+
+  .tomo-4 {
+    background: linear-gradient(135deg, #EF9F27 0%, #E08A1A 100%);
+    transform: rotateZ(5deg);
+  }
+
+  .tomo-numero {
+    font-size: 32px;
+    margin-top: 20px;
+    font-weight: 700;
+  }
+
+  .tomo-titulo {
+    text-align: center;
+    font-size: 11px;
+    line-height: 1.3;
+    margin-bottom: 15px;
   }
 
   /* SECTION LABELS */
@@ -504,7 +559,22 @@
       <button class="cta-btn-large">Quiero mis 4 tomos →</button>
     </div>
     <div class="hero-image">
-      📸 Imagen: papá/mamá con hijo — conexión
+      <div class="tomo tomo-1">
+        <div class="tomo-numero">1</div>
+        <div class="tomo-titulo">Reconocer tu estilo</div>
+      </div>
+      <div class="tomo tomo-2">
+        <div class="tomo-numero">2</div>
+        <div class="tomo-titulo">Comprender su mundo</div>
+      </div>
+      <div class="tomo tomo-3">
+        <div class="tomo-numero">3</div>
+        <div class="tomo-titulo">Escuchar con corazón</div>
+      </div>
+      <div class="tomo tomo-4">
+        <div class="tomo-numero">4</div>
+        <div class="tomo-titulo">Crear hábitos</div>
+      </div>
     </div>
   </div>
 </section>
