@@ -484,6 +484,7 @@
     .problema {
       padding: var(--spacing-3xl) 0;
       position: relative;
+      background: linear-gradient(180deg, #FEF5E7 0%, #F9F7F3 100%);
     }
 
     .problema::before {
@@ -582,7 +583,7 @@
     /* SECCIÓN MECANISMO */
     .mecanismo {
       padding: var(--spacing-3xl) 0;
-      background: linear-gradient(135deg, var(--color-lighter) 0%, #FAFBFC 100%);
+      background: linear-gradient(180deg, #EBF0FF 0%, #F9F7F3 100%);
       margin: var(--spacing-3xl) 0;
       border-radius: var(--radius-lg);
       position: relative;
@@ -680,6 +681,7 @@
     .semanas {
       padding: var(--spacing-3xl) 0;
       position: relative;
+      background: linear-gradient(180deg, #FFF4E6 0%, #F9F7F3 100%);
     }
 
     .semanas h2 {
@@ -761,9 +763,43 @@
     /* TESTIMONIOS */
     .testimonios {
       padding: var(--spacing-3xl) 0;
-      background: linear-gradient(135deg, var(--color-lighter) 0%, #FAFBFC 100%);
+      background: linear-gradient(180deg, #F0E8FF 0%, #F9F7F3 100%);
       margin: var(--spacing-3xl) 0;
       border-radius: var(--radius-lg);
+    }
+
+    .testimonios-videos {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: var(--spacing-2xl);
+      margin-bottom: var(--spacing-4xl);
+    }
+
+    .video-vertical {
+      aspect-ratio: 9 / 16;
+      background: linear-gradient(135deg, var(--color-secondary) 0%, #3d2f7a 100%);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: 600;
+      font-size: 14px;
+      position: relative;
+      transition: all var(--transition-normal);
+    }
+
+    .video-vertical:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .video-vertical::before {
+      content: '▶';
+      font-size: 48px;
+      opacity: 0.5;
     }
 
     .testimonios > .container {
@@ -851,6 +887,7 @@
     .ricardo {
       padding: var(--spacing-3xl) 0;
       position: relative;
+      background: linear-gradient(180deg, #FFE8D6 0%, #F9F7F3 100%);
     }
 
     .ricardo-grid {
@@ -912,6 +949,7 @@
       padding: var(--spacing-3xl) 0;
       text-align: center;
       position: relative;
+      background: linear-gradient(180deg, #E8F0FF 0%, #F9F7F3 100%);
     }
 
     .precio h2 {
@@ -1053,6 +1091,40 @@
     .faq-item.active .faq-answer {
       max-height: 500px;
       padding-top: var(--spacing-lg);
+    }
+
+    /* ANIMACIONES EN SCROLL */
+    .scroll-animate {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity var(--transition-normal), transform var(--transition-normal);
+    }
+
+    .scroll-animate.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .scroll-animate-left {
+      opacity: 0;
+      transform: translateX(-40px);
+      transition: opacity var(--transition-normal), transform var(--transition-normal);
+    }
+
+    .scroll-animate-left.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .scroll-animate-right {
+      opacity: 0;
+      transform: translateX(40px);
+      transition: opacity var(--transition-normal), transform var(--transition-normal);
+    }
+
+    .scroll-animate-right.visible {
+      opacity: 1;
+      transform: translateX(0);
     }
 
     /* CTA FINAL */
@@ -1255,22 +1327,22 @@
     <span class="section-label">El Mecanismo</span>
     <h2>Por qué tu hijo dejó de hablar contigo</h2>
     <div class="mecanismo-grid">
-      <div class="mecanismo-card reveal">
+      <div class="mecanismo-card reveal scroll-animate">
         <div class="numero">01</div>
         <h3>Tu cerebro ordena por urgencia</h3>
         <p>No ordena por importancia. Si alguien está esperando, eso sube a la lista. Lo de tu hijo no tiene a nadie del otro lado esperando.</p>
       </div>
-      <div class="mecanismo-card reveal">
+      <div class="mecanismo-card reveal scroll-animate">
         <div class="numero">02</div>
         <h3>La conexión se erosiona sin darte cuenta</h3>
         <p>Una conversación perdida aquí, un momento de distracción allá. Eventualmente, tu hijo deja de intentar.</p>
       </div>
-      <div class="mecanismo-card reveal">
+      <div class="mecanismo-card reveal scroll-animate">
         <div class="numero">03</div>
         <h3>Fabricas urgencia sin darte cuenta</h3>
         <p>Tu identidad depende de ser el que resuelve. Si tu hijo no necesita que resuelvas, tu cerebro nunca lo sube a la cima.</p>
       </div>
-      <div class="mecanismo-card reveal">
+      <div class="mecanismo-card reveal scroll-animate">
         <div class="numero">04</div>
         <h3>Lo único que le falta a lo tuyo es presencia</h3>
         <p>Tomar los primeros pasos es lo que define todo. La conexión comienza cuando decides que ese momento es lo más importante.</p>
@@ -1285,22 +1357,22 @@
     <span class="section-label">El Proceso</span>
     <h2>4 semanas para reconstruir la conexión</h2>
     <div class="semanas-grid">
-      <div class="semana-card reveal">
+      <div class="semana-card reveal scroll-animate">
         <div class="numero">1</div>
         <h3>Reconocer tu estilo</h3>
         <p>Observa cómo comunicas hoy. Qué funciona, qué no.</p>
       </div>
-      <div class="semana-card reveal">
+      <div class="semana-card reveal scroll-animate">
         <div class="numero">2</div>
         <h3>Comprender su mundo</h3>
         <p>Entra en la experiencia escolar de tu hijo/a.</p>
       </div>
-      <div class="semana-card reveal">
+      <div class="semana-card reveal scroll-animate">
         <div class="numero">3</div>
         <h3>Escuchar con el corazón</h3>
         <p>Practica la escucha genuina, sin juzgar.</p>
       </div>
-      <div class="semana-card reveal">
+      <div class="semana-card reveal scroll-animate">
         <div class="numero">4</div>
         <h3>Crear hábitos nuevos</h3>
         <p>Convierte lo aprendido en conversaciones diarias.</p>
@@ -1312,13 +1384,22 @@
   </div>
 </section>
 
-<!-- TESTIMON IOS -->
+<!-- TESTIMONIOS -->
 <section class="testimonios" id="testimonios">
   <div class="container">
     <span class="section-label">Resultados Reales</span>
     <h2>Papás y mamás que lo lograron</h2>
+
+    <!-- Videos Verticales -->
+    <div class="testimonios-videos">
+      <div class="video-vertical scroll-animate">Testimonio Video 1</div>
+      <div class="video-vertical scroll-animate">Testimonio Video 2</div>
+      <div class="video-vertical scroll-animate">Testimonio Video 3</div>
+      <div class="video-vertical scroll-animate">Testimonio Video 4</div>
+    </div>
+
     <div class="testimonios-grid">
-      <div class="testimonio-card reveal">
+      <div class="testimonio-card reveal scroll-animate">
         <div class="testimonio-header">
           <div class="testimonio-avatar">MB</div>
           <div class="testimonio-info">
@@ -1330,7 +1411,7 @@
         <div class="stars">★★★★★</div>
       </div>
 
-      <div class="testimonio-card reveal">
+      <div class="testimonio-card reveal scroll-animate">
         <div class="testimonio-header">
           <div class="testimonio-avatar">JR</div>
           <div class="testimonio-info">
@@ -1342,7 +1423,7 @@
         <div class="stars">★★★★★</div>
       </div>
 
-      <div class="testimonio-card reveal">
+      <div class="testimonio-card reveal scroll-animate">
         <div class="testimonio-header">
           <div class="testimonio-avatar">CR</div>
           <div class="testimonio-info">
@@ -1354,7 +1435,7 @@
         <div class="stars">★★★★★</div>
       </div>
 
-      <div class="testimonio-card reveal">
+      <div class="testimonio-card reveal scroll-animate">
         <div class="testimonio-header">
           <div class="testimonio-avatar">PM</div>
           <div class="testimonio-info">
@@ -1497,11 +1578,12 @@
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add('active');
+        entry.target.classList.add('visible');
       }
     });
   }, observerOptions);
 
-  document.querySelectorAll('.reveal').forEach(el => {
+  document.querySelectorAll('.reveal, .scroll-animate, .scroll-animate-left, .scroll-animate-right').forEach(el => {
     observer.observe(el);
   });
 
