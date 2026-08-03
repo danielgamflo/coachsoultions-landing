@@ -71,6 +71,23 @@
       .container {
         padding: 0 var(--spacing-md);
       }
+
+      header {
+        padding: var(--spacing-md) var(--spacing-lg) !important;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .logo {
+        font-size: 16px;
+      }
+
+      .btn-header {
+        padding: var(--spacing-sm) var(--spacing-md);
+        font-size: 12px;
+      }
     }
 
     /* HEADER PREMIUM */
@@ -182,7 +199,7 @@
       grid-template-columns: 1fr 1fr;
       gap: var(--spacing-3xl);
       align-items: center;
-      padding: var(--spacing-4xl) 0;
+      padding: var(--spacing-2xl) 0 var(--spacing-4xl) 0;
       min-height: 100vh;
       position: relative;
       overflow: hidden;
@@ -448,7 +465,7 @@
 
     /* SECCIÓN PROBLEMA */
     .problema {
-      padding: var(--spacing-4xl) 0;
+      padding: var(--spacing-3xl) 0;
       position: relative;
     }
 
@@ -547,9 +564,9 @@
 
     /* SECCIÓN MECANISMO */
     .mecanismo {
-      padding: var(--spacing-4xl) 0;
+      padding: var(--spacing-3xl) 0;
       background: linear-gradient(135deg, var(--color-lighter) 0%, #FAFBFC 100%);
-      margin: var(--spacing-4xl) 0;
+      margin: var(--spacing-3xl) 0;
       border-radius: var(--radius-lg);
       position: relative;
       overflow: hidden;
@@ -644,7 +661,7 @@
 
     /* SECCIÓN SEMANAS */
     .semanas {
-      padding: var(--spacing-4xl) 0;
+      padding: var(--spacing-3xl) 0;
       position: relative;
     }
 
@@ -726,9 +743,9 @@
 
     /* TESTIMONIOS */
     .testimonios {
-      padding: var(--spacing-4xl) 0;
+      padding: var(--spacing-3xl) 0;
       background: linear-gradient(135deg, var(--color-lighter) 0%, #FAFBFC 100%);
-      margin: var(--spacing-4xl) 0;
+      margin: var(--spacing-3xl) 0;
       border-radius: var(--radius-lg);
     }
 
@@ -747,7 +764,7 @@
 
     .testimonios-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-template-columns: repeat(3, 1fr);
       gap: var(--spacing-2xl);
     }
 
@@ -815,7 +832,7 @@
 
     /* SECCIÓN RICARDO */
     .ricardo {
-      padding: var(--spacing-4xl) 0;
+      padding: var(--spacing-3xl) 0;
       position: relative;
     }
 
@@ -875,7 +892,7 @@
 
     /* SECCIÓN PRECIO */
     .precio {
-      padding: var(--spacing-4xl) 0;
+      padding: var(--spacing-3xl) 0;
       text-align: center;
       position: relative;
     }
@@ -945,7 +962,7 @@
 
     /* FAQ */
     .faq {
-      padding: var(--spacing-4xl) 0;
+      padding: var(--spacing-3xl) 0;
       position: relative;
     }
 
@@ -1023,7 +1040,7 @@
 
     /* CTA FINAL */
     .cta-final {
-      padding: var(--spacing-4xl) 0;
+      padding: var(--spacing-3xl) 0;
       text-align: center;
       background: linear-gradient(135deg, var(--color-lighter) 0%, #FAFBFC 100%);
       border-radius: var(--radius-lg);
@@ -1127,6 +1144,10 @@
       }
 
       .testimonios-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .mecanismo-grid {
         grid-template-columns: 1fr;
       }
 
@@ -1432,7 +1453,7 @@
 <!-- FOOTER -->
 <footer>
   <div class="container">
-    <p>© 2024 Cosoulutions • Sé tu propio coach</p>
+    <p>© 2026 Cosoulutions • Sé tu propio coach</p>
     <p><a href="#">Privacidad</a> • <a href="#">Términos</a> • <a href="#">Contacto</a></p>
   </div>
 </footer>
