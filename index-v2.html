@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sé tu propio coach — Cosoulutions</title>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    background: #FFFFFF;
+    color: #2C2C2A;
+    line-height: 1.6;
+  }
+
+  .container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  /* HEADER */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    position: sticky;
+    top: 0;
+    background: #FFFFFF;
+    border-bottom: 1px solid #E8E6E0;
+    z-index: 100;
+  }
+
+  .logo {
+    font-size: 18px;
+    font-weight: 700;
+    color: #26215C;
+  }
+
+  .cta-btn {
+    background: #EF9F27;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 25px;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+
+  .cta-btn:hover {
+    background: #E08A1A;
+    transform: translateY(-2px);
+  }
+
+  /* HERO */
+  .hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+    padding: 60px 0;
+  }
+
+  .hero-content h1 {
+    font-size: 42px;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    color: #26215C;
+  }
+
+  .hero-content h1 .highlight {
+    color: #EF9F27;
+  }
+
+  .hero-content p {
+    font-size: 16px;
+    color: #5F5E5A;
+    margin-bottom: 30px;
+  }
+
+  .hero-image {
+    background: linear-gradient(135deg, #F0E6D8 0%, #E8DCC8 100%);
+    height: 400px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #888780;
+    font-size: 14px;
+  }
+
+  /* SECTION LABELS */
+  .section-label {
+    display: inline-block;
+    border: 1px solid #EF9F27;
+    color: #EF9F27;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+  }
+
+  /* PROBLEMA SECTION */
+  .problema {
+    padding: 80px 0;
+    border-top: 1px solid #E8E6E0;
+  }
+
+  .problema-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+  }
+
+  .problema-image {
+    background: linear-gradient(135deg, #E8D4C4 0%, #D8C4B4 100%);
+    height: 350px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #888780;
+  }
+
+  .problema-content h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    line-height: 1.2;
+  }
+
+  .problema-content .quote {
+    font-style: italic;
+    font-size: 18px;
+    color: #26215C;
+    margin: 20px 0;
+    padding-left: 20px;
+    border-left: 4px solid #EF9F27;
+  }
+
+  /* MECANISMO SECTION */
+  .mecanismo {
+    padding: 80px 0;
+    border-top: 1px solid #E8E6E0;
+  }
+
+  .mecanismo h2 {
+    font-size: 36px;
+    margin-bottom: 50px;
+    text-align: center;
+  }
+
+  .mecanismo-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+  }
+
+  .mecanismo-card {
+    padding: 30px;
+    background: #F9F7F3;
+    border-radius: 12px;
+    border-left: 4px solid #EF9F27;
+  }
+
+  .mecanismo-card .numero {
+    display: inline-block;
+    font-size: 28px;
+    font-weight: 700;
+    color: #EF9F27;
+    margin-bottom: 15px;
+  }
+
+  .mecanismo-card h3 {
+    font-size: 18px;
+    margin-bottom: 12px;
+    color: #26215C;
+  }
+
+  .mecanismo-card p {
+    font-size: 14px;
+    color: #5F5E5A;
+    line-height: 1.6;
+  }
+
+  /* LAS 4 SEMANAS */
+  .semanas {
+    padding: 80px 0;
+    border-top: 1px solid #E8E6E0;
+  }
+
+  .semanas h2 {
+    font-size: 36px;
+    margin-bottom: 50px;
+    text-align: center;
+  }
+
+  .semanas-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+
+  .semana-card {
+    background: linear-gradient(135deg, #26215C 0%, #3d2f7a 100%);
+    color: white;
+    padding: 30px;
+    border-radius: 12px;
+    text-align: center;
+  }
+
+  .semana-card .numero {
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    opacity: 0.5;
+  }
+
+  .semana-card h3 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+
+  .semana-card p {
+    font-size: 13px;
+    opacity: 0.9;
+  }
+
+  /* TESTIMONIOS */
+  .testimonios {
+    padding: 80px 0;
+    border-top: 1px solid #E8E6E0;
+  }
+
+  .testimonios h2 {
+    font-size: 36px;
+    margin-bottom: 50px;
+    text-align: center;
+  }
+
+  .testimonios-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+
+  .testimonio-card {
+    padding: 30px;
+    background: #F9F7F3;
+    border-radius: 12px;
+    border-top: 4px solid #EF9F27;
+  }
+
+  .testimonio-header {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+  }
+
+  .testimonio-avatar {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #EF9F27 0%, #E08A1A 100%);
+    border-radius: 50%;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 700;
+    font-size: 18px;
+  }
+
+  .testimonio-info h3 {
+    font-size: 14px;
+    font-weight: 600;
+    color: #26215C;
+  }
+
+  .testimonio-info .role {
+    font-size: 12px;
+    color: #888780;
+  }
+
+  .testimonio-text {
+    font-size: 14px;
+    color: #5F5E5A;
+    font-style: italic;
+    margin-bottom: 15px;
+  }
+
+  .stars {
+    color: #EF9F27;
+    font-size: 14px;
+  }
+
+  /* RICARDO */
+  .ricardo {
+    padding: 80px 0;
+    border-top: 1px solid #E8E6E0;
+  }
+
+  .ricardo-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+  }
+
+  .ricardo-image {
+    background: linear-gradient(135deg, #D8B4A0 0%, #C8A490 100%);
+    height: 350px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #888780;
+  }
+
+  .ricardo-content h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+  }
+
+  .ricardo-content .role {
+    color: #EF9F27;
+    font-weight: 600;
+    margin-bottom: 20px;
+  }
+
+  .ricardo-content p {
+    font-size: 15px;
+    color: #5F5E5A;
+    margin-bottom: 15px;
+    line-height: 1.7;
+  }
+
+  /* PRECIO */
+  .precio {
+    padding: 80px 0;
+    border-top: 1px solid #E8E6E0;
+    text-align: center;
+  }
+
+  .precio h2 {
+    font-size: 36px;
+    margin-bottom: 30px;
+  }
+
+  .precio-box {
+    background: linear-gradient(135deg, #26215C 0%, #3d2f7a 100%);
+    color: white;
+    padding: 50px 30px;
+    border-radius: 12px;
+    margin: 30px 0;
+  }
+
+  .precio-amount {
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 15px;
+  }
+
+  .precio-description {
+    font-size: 16px;
+    opacity: 0.9;
+    margin-bottom: 20px;
+  }
+
+  .garantia {
+    background: rgba(239, 159, 39, 0.1);
+    border: 1px solid #EF9F27;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 30px 0;
+    font-size: 14px;
+    color: #26215C;
+  }
+
+  /* FAQ */
+  .faq {
+    padding: 80px 0;
+    border-top: 1px solid #E8E6E0;
+  }
+
+  .faq h2 {
+    font-size: 36px;
+    margin-bottom: 50px;
+    text-align: center;
+  }
+
+  .faq-item {
+    border-bottom: 1px solid #E8E6E0;
+    padding: 20px 0;
+  }
+
+  .faq-item h3 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #26215C;
+    margin-bottom: 10px;
+  }
+
+  .faq-item p {
+    font-size: 14px;
+    color: #5F5E5A;
+  }
+
+  /* CTA SECTION */
+  .cta-section {
+    padding: 80px 0;
+    text-align: center;
+  }
+
+  .cta-section h2 {
+    font-size: 36px;
+    margin-bottom: 30px;
+  }
+
+  .cta-section p {
+    font-size: 16px;
+    color: #5F5E5A;
+    margin-bottom: 30px;
+  }
+
+  .cta-btn-large {
+    background: #EF9F27;
+    color: white;
+    border: none;
+    padding: 18px 40px;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: inline-block;
+  }
+
+  .cta-btn-large:hover {
+    background: #E08A1A;
+    transform: translateY(-2px);
+  }
+
+  /* FOOTER */
+  footer {
+    background: #26215C;
+    color: white;
+    padding: 40px 0;
+    text-align: center;
+    font-size: 14px;
+    border-top: 1px solid #E8E6E0;
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+    .hero, .problema-grid, .ricardo-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .semanas-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .testimonios-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .mecanismo-grid {
+      grid-template-columns: 1fr;
+    }
+
+    h1 { font-size: 28px; }
+    h2 { font-size: 24px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="container" style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+    <div class="logo">Cosoulutions</div>
+    <button class="cta-btn">Quiero mis 4 tomos →</button>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container" style="display: contents;">
+    <div class="hero-content">
+      <h1>Tu hijo dejó de contarte qué pasa en el <span class="highlight">colegio</span></h1>
+      <p>No es un problema tuyo. Es un mecanismo del cerebro. Descubre cómo reconstruir esa conversación en 4 semanas.</p>
+      <button class="cta-btn-large">Quiero mis 4 tomos →</button>
+    </div>
+    <div class="hero-image">
+      📸 Imagen: papá/mamá con hijo — conexión
+    </div>
+  </div>
+</section>
+
+<!-- PROBLEMA -->
+<section class="problema">
+  <div class="container">
+    <div class="problema-grid">
+      <div class="problema-image">
+        📸 Imagen emocional
+      </div>
+      <div class="problema-content">
+        <span class="section-label">El Problema</span>
+        <h2>No es falta de comunicación.<br/>Es falta de <span class="highlight">conexión.</span></h2>
+        <p class="quote">"A veces creemos que estamos escuchando, cuando en realidad solo estamos respondiendo."</p>
+        <p>Cuando tu hijo/a entra a secundaria, algo cambia. La comunicación se vuelve automática, superficial. Ya no comparte. Y tú no sabes cómo revertirlo.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MECANISMO -->
+<section class="mecanismo">
+  <div class="container">
+    <span class="section-label">El Mecanismo</span>
+    <h2>Por qué tu hijo dejó de hablar contigo</h2>
+    <div class="mecanismo-grid">
+      <div class="mecanismo-card">
+        <div class="numero">01</div>
+        <h3>Tu cerebro ordena por urgencia</h3>
+        <p>No ordena por importancia. Si alguien está esperando, eso sube a la lista. Lo de tu hijo no tiene a nadie del otro lado esperando.</p>
+      </div>
+      <div class="mecanismo-card">
+        <div class="numero">02</div>
+        <h3>La conexión se erosiona sin darte cuenta</h3>
+        <p>Una conversación perdida aquí, un momento de distracción allá. Eventualmente, tu hijo deja de intentar. No es defecto de carácter, es una jerarquía mal configurada.</p>
+      </div>
+      <div class="mecanismo-card">
+        <div class="numero">03</div>
+        <h3>Fabricas urgencia sin darte cuenta</h3>
+        <p>Tu identidad depende de ser el que resuelve. Si tu hijo no necesita que resuelvas, tu cerebro nunca lo sube a la cima de la pila.</p>
+      </div>
+      <div class="mecanismo-card">
+        <div class="numero">04</div>
+        <h3>Lo único que le falta a lo tuyo es presencia</h3>
+        <p>Tomar los primeros pasos es lo que define todo. La conexión comienza cuando decides que ese momento es lo más importante que tienes.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LAS 4 SEMANAS -->
+<section class="semanas">
+  <div class="container">
+    <span class="section-label">El Proceso</span>
+    <h2>4 semanas para reconstruir la conexión</h2>
+    <div class="semanas-grid">
+      <div class="semana-card">
+        <div class="numero">1</div>
+        <h3>Reconocer tu estilo</h3>
+        <p>Observa cómo comunicas hoy. Qué funciona, qué no.</p>
+      </div>
+      <div class="semana-card">
+        <div class="numero">2</div>
+        <h3>Comprender su mundo</h3>
+        <p>Entra en la experiencia escolar de tu hijo/a.</p>
+      </div>
+      <div class="semana-card">
+        <div class="numero">3</div>
+        <h3>Escuchar con el corazón</h3>
+        <p>Practica la escucha genuina, sin juzgar.</p>
+      </div>
+      <div class="semana-card">
+        <div class="numero">4</div>
+        <h3>Crear hábitos nuevos</h3>
+        <p>Convierte lo aprendido en conversaciones diarias.</p>
+      </div>
+    </div>
+    <p style="text-align: center; margin-top: 30px; color: #5F5E5A; font-size: 14px;">+60 preguntas guiadas • Reflexiones profundas • Tareas prácticas semanales</p>
+  </div>
+</section>
+
+<!-- RICARDO -->
+<section class="ricardo">
+  <div class="container">
+    <span class="section-label">Quién te acompaña</span>
+    <div class="ricardo-grid">
+      <div class="ricardo-image">
+        📸 Foto de Ricardo
+      </div>
+      <div class="ricardo-content">
+        <h2>Ricardo Cañete</h2>
+        <p class="role">Docente • Coach • Especialista en comunicación familiar</p>
+        <p>Con más de 20 años de experiencia en educación, Ricardo ha acompañado a cientos de familias a reconstruir sus conversaciones. Su metodología combina la neurociencia, la psicología educativa y la experiencia real en aulas de colegios de Chile.</p>
+        <p>"No se trata de tener todas las respuestas. Se trata de estar presente y dispuesto a descubrirlas juntos."</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIOS -->
+<section class="testimonios">
+  <div class="container">
+    <span class="section-label">Resultados reales</span>
+    <h2>Papás y mamás que lo lograron</h2>
+    <div class="testimonios-grid">
+      <div class="testimonio-card">
+        <div class="testimonio-header">
+          <div class="testimonio-avatar">MB</div>
+          <div class="testimonio-info">
+            <h3>Marcela Bravo</h3>
+            <p class="role">Mamá de Tomás (14 años)</p>
+          </div>
+        </div>
+        <p class="testimonio-text">"Después de 6 meses sin que mi hijo me contara nada sobre el colegio, en 2 semanas ya estaba compartiendo. No cambié yo, cambió cómo escucho."</p>
+        <div class="stars">★★★★★</div>
+      </div>
+
+      <div class="testimonio-card">
+        <div class="testimonio-header">
+          <div class="testimonio-avatar">JR</div>
+          <div class="testimonio-info">
+            <h3>Juan Rojas</h3>
+            <p class="role">Papá de Sofía (13 años)</p>
+          </div>
+        </div>
+        <p class="testimonio-text">"No esperaba que funcionar tan rápido. Los primeros días pensé que era casualidad. Pero después de la semana 3, entendí: era consistencia."</p>
+        <div class="stars">★★★★★</div>
+      </div>
+
+      <div class="testimonio-card">
+        <div class="testimonio-header">
+          <div class="testimonio-avatar">CR</div>
+          <div class="testimonio-info">
+            <h3>Catalina Rodríguez</h3>
+            <p class="role">Mamá de dos (12 y 15 años)</p>
+          </div>
+        </div>
+        <p class="testimonio-text">"Trabajaba tanto que perdí la conexión con mis hijos. Esto me devolvió el tiempo de calidad que necesitaba, sin renunciar a nada."</p>
+        <div class="stars">★★★★★</div>
+      </div>
+
+      <div class="testimonio-card">
+        <div class="testimonio-header">
+          <div class="testimonio-avatar">PM</div>
+          <div class="testimonio-info">
+            <h3>Paula Méndez</h3>
+            <p class="role">Mamá de Mateo (14 años)</p>
+          </div>
+        </div>
+        <p class="testimonio-text">"Las preguntas son poderosas. No me dijeron qué hacer, sino cómo pensar diferente. Eso es lo que necesitaba."</p>
+        <div class="stars">★★★★★</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRECIO -->
+<section class="precio">
+  <div class="container">
+    <span class="section-label">Inversión</span>
+    <h2>Lo que inviertes en 4 semanas</h2>
+    
+    <div class="precio-box">
+      <div class="precio-amount">USD 35.50</div>
+      <div class="precio-description">Para los 4 tomos completos</div>
+    </div>
+
+    <p style="font-size: 16px; color: #5F5E5A; margin: 20px 0;">Una sesión individual de coaching cuesta USD 40-70.<br/>Aquí tienes 4 semanas completas.</p>
+
+    <div class="garantia">
+      ✓ Si después de revisar los 4 tomos sientes que no es lo que esperabas, te devolvemos tu dinero. Sin preguntas.
+    </div>
+
+    <button class="cta-btn-large">Quiero mis 4 tomos →</button>
+  </div>
+</section>
+
+<!-- ¿ES PARA TI? -->
+<section style="padding: 80px 0; border-top: 1px solid #E8E6E0;">
+  <div class="container">
+    <span class="section-label">Claridad</span>
+    <h2 style="font-size: 36px; margin-bottom: 40px;">¿Es para ti?</h2>
+    
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px;">
+      <div style="padding: 30px; background: #F9F7F3; border-radius: 12px;">
+        <h3 style="font-size: 18px; color: #26215C; margin-bottom: 15px;">✓ Es para ti si...</h3>
+        <ul style="list-style: none;">
+          <li style="font-size: 14px; color: #5F5E5A; margin-bottom: 10px;">Tu hijo dejó de confiar en ti</li>
+          <li style="font-size: 14px; color: #5F5E5A; margin-bottom: 10px;">No sabes cómo conectar en secundaria</li>
+          <li style="font-size: 14px; color: #5F5E5A; margin-bottom: 10px;">Quieres mejorar sin terapia</li>
+          <li style="font-size: 14px; color: #5F5E5A;">Tienes 30 minutos a varias horas por semana</li>
+        </ul>
+      </div>
+
+      <div style="padding: 30px; background: #F9F7F3; border-radius: 12px;">
+        <h3 style="font-size: 18px; color: #26215C; margin-bottom: 15px;">✕ No es para ti si...</h3>
+        <ul style="list-style: none;">
+          <li style="font-size: 14px; color: #5F5E5A; margin-bottom: 10px;">Buscas que alguien "repare" a tu hijo</li>
+          <li style="font-size: 14px; color: #5F5E5A; margin-bottom: 10px;">No tienes disposición real al cambio</li>
+          <li style="font-size: 14px; color: #5F5E5A; margin-bottom: 10px;">Prefieres culpar antes que reflexionar</li>
+          <li style="font-size: 14px; color: #5F5E5A;">No confías en ti mismo como papá/mamá</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq">
+  <div class="container">
+    <span class="section-label">Preguntas</span>
+    <h2>Dudas comunes</h2>
+
+    <div class="faq-item">
+      <h3>¿Cuánto tiempo debo dedicar cada semana?</h3>
+      <p>Trabaja a tu propio ritmo. Desde 30 minutos hasta varias horas por semana, según tu disponibilidad y cuánto quieras profundizar en cada pregunta. No hay presión de tiempo.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>¿Recibiré todo de una vez o semana a semana?</h3>
+      <p>Recibirás los 4 tomos completos al instante. Tú decides el ritmo: puedes hacerlos en 4 semanas o tomarte más tiempo.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>¿Qué pasa si no veo resultados?</h3>
+      <p>La garantía es simple: si después de revisar los 4 tomos no estás satisfecho, te devolvemos tu dinero. Sin preguntas.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>¿Hay soporte adicional o sesiones en vivo?</h3>
+      <p>Esto es un programa de autocoaching. Los 4 tomos están diseñados para que reflexiones por ti mismo. Ricardo también ofrece sesiones en vivo opcionales (biweekly) si quieres soporte extra.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>¿Cómo se entregan los 4 tomos?</h3>
+      <p>Los recibirás en PDF y por email después de tu compra. Puedes descargarlos, imprimirlos o trabajar directamente en tu dispositivo.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="cta-section">
+  <div class="container">
+    <h2>Tu hijo necesita que empieces hoy</h2>
+    <p>No necesitas estar "listo". Necesitas estar dispuesto.</p>
+    <button class="cta-btn-large">Quiero mis 4 tomos →</button>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <p>© 2024 Cosoulutions • Sé tu propio coach</p>
+    <p style="font-size: 12px; margin-top: 10px; opacity: 0.8;">Privacidad • Términos • Contacto</p>
+  </div>
+</footer>
+
+</body>
+</html>
