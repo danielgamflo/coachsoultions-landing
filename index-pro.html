@@ -871,8 +871,21 @@
 
     .testimonios-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(4, 1fr);
       gap: var(--spacing-2xl);
+      margin-top: var(--spacing-3xl);
+    }
+
+    @media (max-width: 1024px) {
+      .testimonios-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .testimonios-grid {
+        grid-template-columns: 1fr;
+      }
     }
 
     .testimonio-card {
@@ -1451,6 +1464,8 @@
       <div class="video-vertical scroll-animate">Testimonio Video 3</div>
       <div class="video-vertical scroll-animate">Testimonio Video 4</div>
     </div>
+
+    <h3 style="font-size: 24px; color: var(--color-text); margin-bottom: var(--spacing-2xl); font-weight: 600;">Historias de transformación</h3>
 
     <div class="testimonios-grid">
       <div class="testimonio-card reveal scroll-animate">
