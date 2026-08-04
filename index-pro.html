@@ -7,6 +7,8 @@
   <meta name="build" content="2026-08-03T23:35:00Z">
   <title>Sé tu propio coach • Cosoulutions</title>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
   <style>
     * {
       margin: 0;
@@ -1417,6 +1419,64 @@
         width: 100%;
       }
     }
+
+    /* MODERNIZATION: Glow Effect */
+    .btn-primary:hover {
+      box-shadow: 0 0 30px rgba(255, 102, 51, 0.6);
+    }
+
+    .btn-header:hover {
+      box-shadow: 0 0 20px rgba(255, 102, 51, 0.5);
+    }
+
+    /* Glassmorphism effect */
+    .testimonio-card {
+      backdrop-filter: blur(10px);
+      background: rgba(255, 255, 255, 0.95);
+    }
+
+    /* Gradient animation */
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .hero {
+      background: linear-gradient(-45deg, #ffffff, #F9F7F3, #ffffff, #F1EFE8);
+      background-size: 400% 400%;
+      animation: gradientShift 15s ease infinite;
+    }
+
+    /* Smooth transitions */
+    a {
+      position: relative;
+      transition: color var(--transition-normal);
+    }
+
+    a::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: -5px;
+      left: 0;
+      background: var(--color-primary);
+      transition: width var(--transition-normal);
+    }
+
+    a:hover::after {
+      width: 100%;
+    }
+
+    /* Micro-interaction: Input focus */
+    input:focus,
+    textarea:focus {
+      outline: none;
+      border-color: var(--color-primary);
+      box-shadow: 0 0 0 3px rgba(255, 102, 51, 0.1);
+      transition: all var(--transition-fast);
+    }
   </style>
 </head>
 <body>
@@ -1886,6 +1946,199 @@
         document.querySelector(href).scrollIntoView({ behavior: 'smooth' });
       }
     });
+  });
+
+  // GSAP Animations
+  gsap.registerPlugin(ScrollTrigger);
+
+  // Hero animations
+  gsap.from('.hero h1', {
+    opacity: 0,
+    y: 30,
+    duration: 0.8,
+    ease: 'back.out'
+  });
+
+  gsap.from('.hero-subheading', {
+    opacity: 0,
+    y: 20,
+    duration: 0.8,
+    delay: 0.15,
+    ease: 'ease-out'
+  });
+
+  gsap.from('.hero-cta-group', {
+    opacity: 0,
+    y: 20,
+    duration: 0.8,
+    delay: 0.3,
+    ease: 'ease-out'
+  });
+
+  // Button hover effects
+  document.querySelectorAll('.btn-primary, .btn-header, .btn-secondary').forEach(btn => {
+    btn.addEventListener('mouseenter', () => {
+      gsap.to(btn, {
+        scale: 1.05,
+        duration: 0.3,
+        ease: 'power2.out'
+      });
+    });
+    btn.addEventListener('mouseleave', () => {
+      gsap.to(btn, {
+        scale: 1,
+        duration: 0.3,
+        ease: 'power2.out'
+      });
+    });
+  });
+
+  // Scroll reveal animations
+  gsap.utils.toArray('.reveal').forEach((el) => {
+    gsap.from(el, {
+      opacity: 0,
+      y: 30,
+      duration: 0.7,
+      ease: 'power2.out',
+      scrollTrigger: {
+        trigger: el,
+        start: 'top 80%',
+        end: 'top 50%',
+        toggleActions: 'play none none none'
+      }
+    });
+  });
+
+  // Scroll animate with scale
+  gsap.utils.toArray('.scroll-animate').forEach((el) => {
+    gsap.from(el, {
+      opacity: 0,
+      scale: 0.9,
+      duration: 0.8,
+      ease: 'back.out(1.2)',
+      scrollTrigger: {
+        trigger: el,
+        start: 'top 75%',
+        toggleActions: 'play none none none'
+      }
+    });
+  });
+
+  // Parallax effect on hero
+  gsap.to('.hero-content', {
+    y: -100,
+    scrollTrigger: {
+      trigger: '.hero',
+      start: 'top top',
+      end: 'bottom top',
+      scrub: 0.5,
+      markers: false
+    }
+  });
+
+  // Stagger animations for mecanismo cards
+  gsap.utils.toArray('.mecanismo-card').forEach((el, index) => {
+    gsap.from(el, {
+      opacity: 0,
+      x: -50,
+      duration: 0.6,
+      ease: 'power2.out',
+      delay: index * 0.1,
+      scrollTrigger: {
+        trigger: el,
+        start: 'top 80%',
+        toggleActions: 'play none none none'
+      }
+    });
+  });
+
+  // Semana cards animations
+  gsap.utils.toArray('.semana-card').forEach((el, index) => {
+    gsap.from(el, {
+      opacity: 0,
+      scale: 0.85,
+      duration: 0.6,
+      ease: 'back.out',
+      delay: index * 0.08,
+      scrollTrigger: {
+        trigger: el,
+        start: 'top 80%',
+        toggleActions: 'play none none none'
+      }
+    });
+  });
+
+  // Testimonio cards slide-in
+  gsap.utils.toArray('.testimonio-card').forEach((el, index) => {
+    gsap.from(el, {
+      opacity: 0,
+      x: index % 2 === 0 ? -50 : 50,
+      duration: 0.7,
+      ease: 'power2.out',
+      delay: index * 0.1,
+      scrollTrigger: {
+        trigger: el,
+        start: 'top 80%',
+        toggleActions: 'play none none none'
+      }
+    });
+  });
+
+  // Stars animation
+  document.querySelectorAll('.stars').forEach((starEl) => {
+    gsap.from(starEl, {
+      color: '#ccc',
+      duration: 0.8,
+      ease: 'power2.out',
+      scrollTrigger: {
+        trigger: starEl,
+        start: 'top 80%',
+        toggleActions: 'play none none none'
+      }
+    });
+  });
+
+  // Ricardo section zoom effect
+  gsap.from('.ricardo-visual', {
+    opacity: 0,
+    scale: 0.9,
+    duration: 0.8,
+    ease: 'back.out',
+    scrollTrigger: {
+      trigger: '.ricardo-visual',
+      start: 'top 80%',
+      toggleActions: 'play none none none'
+    }
+  });
+
+  // FAQ item animations
+  gsap.utils.toArray('.faq-item').forEach((el, index) => {
+    gsap.from(el, {
+      opacity: 0,
+      y: 20,
+      duration: 0.5,
+      ease: 'power2.out',
+      delay: index * 0.05,
+      scrollTrigger: {
+        trigger: el,
+        start: 'top 90%',
+        toggleActions: 'play none none none'
+      }
+    });
+  });
+
+  // CTA Final animation
+  gsap.from('.cta-final h2, .cta-final p, .cta-final button', {
+    opacity: 0,
+    y: 30,
+    duration: 0.7,
+    ease: 'power2.out',
+    stagger: 0.15,
+    scrollTrigger: {
+      trigger: '.cta-final',
+      start: 'top 80%',
+      toggleActions: 'play none none none'
+    }
   });
 </script>
 
