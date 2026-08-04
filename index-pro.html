@@ -645,8 +645,20 @@
 
     .mecanismo-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-template-columns: repeat(4, 1fr);
       gap: var(--spacing-2xl);
+    }
+
+    @media (max-width: 1024px) {
+      .mecanismo-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .mecanismo-grid {
+        grid-template-columns: 1fr;
+      }
     }
 
     .mecanismo-card {
@@ -722,9 +734,20 @@
 
     .semanas-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      grid-template-columns: repeat(4, 1fr);
       gap: var(--spacing-2xl);
       margin-bottom: var(--spacing-2xl);
+    }
+
+    @media (max-width: 1024px) {
+      .semanas-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .semanas-grid {
+        grid-template-columns: 1fr;
     }
 
     .semana-card {
