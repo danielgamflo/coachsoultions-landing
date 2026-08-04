@@ -830,9 +830,17 @@
 
     .semanas-note {
       text-align: center;
-      color: var(--color-text-muted);
-      font-size: 13px;
+      color: var(--color-text);
+      font-size: 15px;
       margin-top: var(--spacing-2xl);
+      font-weight: 600;
+      padding: var(--spacing-lg) var(--spacing-xl);
+      background: rgba(45, 134, 89, 0.08);
+      border-radius: var(--radius-md);
+      display: inline-block;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.6;
     }
 
     /* TESTIMONIOS */
@@ -1050,12 +1058,14 @@
     .precio-box {
       background: linear-gradient(135deg, var(--color-secondary) 0%, #3d2f7a 100%);
       color: white;
-      padding: var(--spacing-3xl) var(--spacing-2xl);
+      padding: var(--spacing-4xl) var(--spacing-3xl);
       border-radius: var(--radius-lg);
-      margin: 0;
-      box-shadow: var(--shadow-lg);
+      margin: var(--spacing-3xl) auto;
+      max-width: 800px;
+      box-shadow: 0 20px 60px rgba(0, 82, 204, 0.3);
       position: relative;
       overflow: hidden;
+      border: 2px solid rgba(255, 255, 255, 0.1);
     }
 
     .precio-box::before {
@@ -1065,25 +1075,27 @@
       right: -50%;
       width: 200%;
       height: 200%;
-      background: radial-gradient(circle, rgba(239, 159, 39, 0.1) 0%, transparent 70%);
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.15) 0%, transparent 70%);
       pointer-events: none;
     }
 
     .precio-amount {
-      font-size: clamp(36px, 6vw, 56px);
+      font-size: clamp(44px, 8vw, 72px);
       font-weight: 800;
       margin-bottom: var(--spacing-md);
       line-height: 1;
       position: relative;
       z-index: 1;
+      letter-spacing: -1px;
     }
 
     .precio-description {
-      font-size: 16px;
-      opacity: 0.9;
+      font-size: 18px;
+      opacity: 0.95;
       margin-bottom: var(--spacing-md);
       position: relative;
       z-index: 1;
+      font-weight: 500;
     }
 
     .garantia {
@@ -1098,9 +1110,77 @@
     }
 
     .precio-note {
+      font-size: 16px;
+      color: var(--color-secondary);
+      margin: var(--spacing-2xl) auto;
+      padding: var(--spacing-lg) var(--spacing-xl);
+      background: rgba(0, 82, 204, 0.08);
+      border-left: 4px solid var(--color-secondary);
+      border-radius: var(--radius-md);
+      font-weight: 500;
+      max-width: 800px;
+      line-height: 1.8;
+    }
+
+    /* BENEFICIOS EXCLUSIVOS */
+    .beneficios-exclusivos {
+      margin-top: var(--spacing-3xl);
+      margin-bottom: var(--spacing-2xl);
+    }
+
+    .beneficios-titulo {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--color-text);
+      margin-bottom: var(--spacing-lg);
+      text-align: center;
+    }
+
+    .beneficios-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: var(--spacing-lg);
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    @media (max-width: 768px) {
+      .beneficios-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .beneficio-item {
+      background: white;
+      padding: var(--spacing-lg);
+      border-radius: var(--radius-md);
+      border: 2px solid var(--color-primary);
+      text-align: center;
+      transition: all var(--transition-normal);
+    }
+
+    .beneficio-item:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .beneficio-icon {
+      font-size: 32px;
+      margin-bottom: var(--spacing-md);
+      display: block;
+    }
+
+    .beneficio-item h3 {
       font-size: 14px;
+      font-weight: 700;
+      color: var(--color-secondary);
+      margin-bottom: var(--spacing-sm);
+    }
+
+    .beneficio-item p {
+      font-size: 13px;
       color: var(--color-text-muted);
-      margin: var(--spacing-lg) 0;
+      line-height: 1.5;
     }
 
     /* FAQ */
@@ -1622,6 +1702,27 @@
     </div>
 
     <p class="precio-note">Una sesión individual de coaching cuesta USD 40-70. Aquí tienes 4 semanas completas.</p>
+
+    <div class="beneficios-exclusivos">
+      <h3 class="beneficios-titulo">✨ Qué te llevas por este valor</h3>
+      <div class="beneficios-grid">
+        <div class="beneficio-item">
+          <span class="beneficio-icon">📱</span>
+          <h3>Grupo WhatsApp</h3>
+          <p>Acceso exclusivo a comunidad privada para resolver dudas y compartir experiencias</p>
+        </div>
+        <div class="beneficio-item">
+          <span class="beneficio-icon">🎥</span>
+          <h3>Sesiones GoogleMeet</h3>
+          <p>Una vez al mes, sesión en vivo con Coach para seguimiento de tu progreso</p>
+        </div>
+        <div class="beneficio-item">
+          <span class="beneficio-icon">👨‍🏫</span>
+          <h3>Coach en Vivo</h3>
+          <p>Responde tus preguntas y te acompaña en tu proceso de transformación</p>
+        </div>
+      </div>
+    </div>
 
     <div class="garantia reveal">
       ✓ Si después de revisar los 4 tomos sientes que no es lo que esperabas, te devolvemos tu dinero. Sin preguntas.
