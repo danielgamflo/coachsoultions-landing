@@ -22,8 +22,8 @@
       --color-lighter: #F1EFE8;
       --color-border: #E8E6E0;
       --color-text: #2C2C2A;
-      --color-text-muted: #5F5E5A;
-      --color-text-light: #888780;
+      --color-text-muted: #4A4A48;
+      --color-text-light: #666666;
       
       --spacing-xs: 8px;
       --spacing-sm: 12px;
@@ -31,13 +31,13 @@
       --spacing-lg: 24px;
       --spacing-xl: 32px;
       --spacing-2xl: 48px;
-      --spacing-3xl: 64px;
-      --spacing-4xl: 80px;
+      --spacing-3xl: 50px;
+      --spacing-4xl: 60px;
       
-      --radius-sm: 6px;
-      --radius-md: 12px;
-      --radius-lg: 16px;
-      --radius-xl: 24px;
+      --radius-sm: 4px;
+      --radius-md: 8px;
+      --radius-lg: 10px;
+      --radius-xl: 12px;
       
       --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
       --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.12);
@@ -152,7 +152,7 @@
       font-size: 20px;
       font-weight: 700;
       color: var(--color-secondary);
-      letter-spacing: -0.5px;
+      letter-spacing: 0.5px;
       text-transform: lowercase;
       margin-right: auto;
     }
@@ -284,12 +284,12 @@
     }
 
     .hero h1 {
-      font-size: clamp(36px, 5vw, 56px);
+      font-size: clamp(44px, 6vw, 72px);
       font-weight: 800;
-      line-height: 1.1;
+      line-height: 1.2;
       margin-bottom: var(--spacing-lg);
       color: var(--color-secondary);
-      letter-spacing: -1px;
+      letter-spacing: 0.5px;
     }
 
     .hero h1 .highlight {
@@ -302,8 +302,8 @@
     }
 
     .hero-subheading {
-      font-size: 18px;
-      color: var(--color-text-muted);
+      font-size: 20px;
+      color: var(--color-text);
       margin-bottom: var(--spacing-2xl);
       font-weight: 400;
       line-height: 1.7;
@@ -562,11 +562,11 @@
     }
 
     .problema-content h2 {
-      font-size: clamp(28px, 4vw, 42px);
+      font-size: clamp(32px, 5vw, 48px);
       margin-bottom: var(--spacing-lg);
       line-height: 1.2;
       font-weight: 800;
-      letter-spacing: -0.5px;
+      letter-spacing: 0.5px;
     }
 
     .problema-content h2 .highlight {
@@ -659,11 +659,11 @@
     }
 
     .mecanismo h2 {
-      font-size: clamp(28px, 4vw, 42px);
+      font-size: clamp(32px, 5vw, 48px);
       margin-bottom: var(--spacing-3xl);
       text-align: center;
       font-weight: 800;
-      letter-spacing: -0.5px;
+      letter-spacing: 0.5px;
     }
 
     .mecanismo-grid {
@@ -752,7 +752,7 @@
       margin-bottom: var(--spacing-3xl);
       text-align: center;
       font-weight: 800;
-      letter-spacing: -0.5px;
+      letter-spacing: 0.5px;
     }
 
     .semanas-grid {
@@ -895,7 +895,7 @@
       margin-bottom: var(--spacing-3xl);
       text-align: center;
       font-weight: 800;
-      letter-spacing: -0.5px;
+      letter-spacing: 0.5px;
     }
 
     .testimonios-grid {
@@ -1011,7 +1011,7 @@
       font-size: clamp(28px, 4vw, 42px);
       margin-bottom: var(--spacing-lg);
       font-weight: 800;
-      letter-spacing: -0.5px;
+      letter-spacing: 0.5px;
     }
 
     .ricardo-content .role {
@@ -1052,7 +1052,7 @@
       font-size: clamp(28px, 4vw, 42px);
       margin-bottom: var(--spacing-2xl);
       font-weight: 800;
-      letter-spacing: -0.5px;
+      letter-spacing: 0.5px;
     }
 
     .precio-box {
@@ -1086,7 +1086,7 @@
       line-height: 1;
       position: relative;
       z-index: 1;
-      letter-spacing: -1px;
+      letter-spacing: 0.5px;
     }
 
     .precio-description {
@@ -1194,7 +1194,7 @@
       margin-bottom: var(--spacing-3xl);
       text-align: center;
       font-weight: 800;
-      letter-spacing: -0.5px;
+      letter-spacing: 0.5px;
     }
 
     .faq-container {
@@ -1309,7 +1309,7 @@
       font-size: clamp(28px, 4vw, 42px);
       margin-bottom: var(--spacing-lg);
       font-weight: 800;
-      letter-spacing: -0.5px;
+      letter-spacing: 0.5px;
     }
 
     .cta-final p {
@@ -1777,6 +1777,46 @@
           <div class="faq-icon">+</div>
         </div>
         <div class="faq-answer">Los recibirás en PDF y por email después de tu compra. Puedes descargarlos, imprimirlos o trabajar directamente en tu dispositivo.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>¿Funciona si mi hijo tiene TDAH, autismo u otro diagnóstico?</span>
+          <div class="faq-icon">+</div>
+        </div>
+        <div class="faq-answer">Sí. El programa está diseñado para fortalecer la conexión emocional y la comunicación en cualquier contexto. Los enfoques de escucha genuina y presencia son especialmente poderosos cuando hay diagnósticos que afectan la comunicación. Si tu hijo tiene necesidades específicas, el programa es flexible y se adapta a su ritmo.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>¿Qué pasa si mi hijo rechaza completamente hablar conmigo?</span>
+          <div class="faq-icon">+</div>
+        </div>
+        <div class="faq-answer">Es una situación común. El rechazo muchas veces es un síntoma, no una causa definitiva. El programa te enseña exactamente cómo abrir canales de comunicación desde cero: cómo estar presente sin exigir, cómo crear momentos seguros, y cómo escuchar incluso el silencio. Los primeros pasos son siempre los más poderosos.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>¿Garantizan resultados si ya intenté coaching o terapia antes?</span>
+          <div class="faq-icon">+</div>
+        </div>
+        <div class="faq-answer">La diferencia está en el enfoque. Muchos programas trabajan desde afuera hacia adentro. Nosotros trabajamos desde la relación hacia la transformación. Si algo no funcionó antes, probablemente el modelo no era el correcto para tu hijo o tu familia. Aquí cambias tú, y eso genera el espacio para que todo cambie.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>¿Es solo para adolescentes o funciona con niños menores?</span>
+          <div class="faq-icon">+</div>
+        </div>
+        <div class="faq-answer">El programa está optimizado para padres de adolescentes (12-18 años), que es cuando la desconexión se vuelve más evidente. Dicho esto, los principios funcionan con niños menores que muestren señales de cierre emocional. Puedes adaptarlo a la edad de tu hijo.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>¿Qué pasa si mi relación con mi hijo está muy dañada?</span>
+          <div class="faq-icon">+</div>
+        </div>
+        <div class="faq-answer">Los daños relacionales son sanables. De hecho, muchas de nuestras historias de éxito comenzaron desde lugares muy oscuros: años sin comunicación real, traiciones, incomprensión. Lo que el programa te ofrece es una metodología clara para reconstruir desde los cimientos. No es magia, pero es efectivo.</div>
       </div>
     </div>
   </div>
