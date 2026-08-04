@@ -2024,17 +2024,19 @@
     });
   });
 
-  // Parallax effect on hero
-  gsap.to('.hero-content', {
-    y: -100,
-    scrollTrigger: {
-      trigger: '.hero',
-      start: 'top top',
-      end: 'bottom top',
-      scrub: 0.5,
-      markers: false
-    }
-  });
+  // Parallax effect on hero (optimized)
+  if (window.innerWidth > 768) {
+    gsap.to('.hero-content', {
+      y: -50,
+      scrollTrigger: {
+        trigger: '.hero',
+        start: 'top top',
+        end: 'bottom top',
+        scrub: 0.3,
+        markers: false
+      }
+    });
+  }
 
   // Stagger animations for mecanismo cards
   gsap.utils.toArray('.mecanismo-card').forEach((el, index) => {
