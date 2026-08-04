@@ -855,13 +855,14 @@
 
     .testimonios-videos {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      grid-template-columns: repeat(4, 1fr);
       gap: var(--spacing-2xl);
       margin-bottom: var(--spacing-4xl);
     }
 
     .video-vertical {
       aspect-ratio: 9 / 16;
+      min-height: 300px;
       background: linear-gradient(135deg, var(--color-secondary) 0%, #3d2f7a 100%);
       border-radius: var(--radius-lg);
       overflow: hidden;
@@ -1400,6 +1401,10 @@
 
       .semanas-grid {
         grid-template-columns: 1fr;
+      }
+
+      .testimonios-videos {
+        grid-template-columns: repeat(2, 1fr);
       }
 
       .testimonios-grid {
@@ -1951,28 +1956,31 @@
   // GSAP Animations
   gsap.registerPlugin(ScrollTrigger);
 
-  // Hero animations
+  // Hero animations (optimized - no conflicts)
   gsap.from('.hero h1', {
     opacity: 0,
-    y: 30,
-    duration: 0.8,
-    ease: 'back.out'
+    y: 20,
+    duration: 0.7,
+    ease: 'power2.out',
+    clearProps: 'transform'
   });
 
   gsap.from('.hero-subheading', {
     opacity: 0,
-    y: 20,
-    duration: 0.8,
-    delay: 0.15,
-    ease: 'ease-out'
+    y: 15,
+    duration: 0.7,
+    delay: 0.1,
+    ease: 'power2.out',
+    clearProps: 'transform'
   });
 
   gsap.from('.hero-cta-group', {
     opacity: 0,
-    y: 20,
-    duration: 0.8,
-    delay: 0.3,
-    ease: 'ease-out'
+    y: 15,
+    duration: 0.7,
+    delay: 0.2,
+    ease: 'power2.out',
+    clearProps: 'transform'
   });
 
   // Button hover effects
@@ -2024,19 +2032,20 @@
     });
   });
 
-  // Parallax effect on hero (optimized)
-  if (window.innerWidth > 768) {
-    gsap.to('.hero-content', {
-      y: -50,
-      scrollTrigger: {
-        trigger: '.hero',
-        start: 'top top',
-        end: 'bottom top',
-        scrub: 0.3,
-        markers: false
-      }
-    });
-  }
+  // Parallax effect on hero (disabled to prevent jump conflicts)
+  // Re-enable after fixing animation conflicts
+  // if (window.innerWidth > 768) {
+  //   gsap.to('.hero-content', {
+  //     y: -50,
+  //     scrollTrigger: {
+  //       trigger: '.hero',
+  //       start: 'top top',
+  //       end: 'bottom top',
+  //       scrub: 0.3,
+  //       markers: false
+  //     }
+  //   });
+  // }
 
   // Stagger animations for mecanismo cards
   gsap.utils.toArray('.mecanismo-card').forEach((el, index) => {
@@ -2054,17 +2063,18 @@
     });
   });
 
-  // Semana cards animations
+  // Semana cards animations (simplified - no jumps)
   gsap.utils.toArray('.semana-card').forEach((el, index) => {
     gsap.from(el, {
       opacity: 0,
-      scale: 0.85,
+      y: 20,
       duration: 0.6,
-      ease: 'back.out',
-      delay: index * 0.08,
+      ease: 'power2.out',
+      delay: index * 0.06,
+      clearProps: 'transform',
       scrollTrigger: {
         trigger: el,
-        start: 'top 80%',
+        start: 'top 85%',
         toggleActions: 'play none none none'
       }
     });
