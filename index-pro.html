@@ -2154,19 +2154,20 @@
     });
   });
 
-  // Semana cards scroll-driven reveal animation
+  // Semana cards scroll-driven reveal animation with ScrollTrigger
   const semanaWrapper = document.querySelector('.semanas-sticky-wrapper');
   if (semanaWrapper) {
     const semanaCards = document.querySelectorAll('.semana-card');
+    const semanaSection = semanaWrapper.closest('section');
 
     // Create timeline for staggered reveal
     const semanaTimeline = gsap.timeline({
       scrollTrigger: {
-        trigger: semanaWrapper,
-        start: 'top 30%',
-        end: `+=${semanaCards.length * 200}`,
-        pin: true,
-        scrub: 1,
+        trigger: semanaSection,
+        start: 'top center',
+        end: 'bottom center',
+        pin: semanaWrapper,
+        scrub: 0.5,
         markers: false
       }
     });
@@ -2175,10 +2176,10 @@
     semanaCards.forEach((card, index) => {
       semanaTimeline.from(card, {
         opacity: 0,
-        y: 50,
-        duration: 1,
+        y: 80,
+        duration: 1.2,
         ease: 'power2.out'
-      }, index * 0.8);
+      }, index * 1);
     });
   }
 
