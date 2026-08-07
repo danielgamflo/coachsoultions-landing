@@ -762,23 +762,45 @@
       letter-spacing: 0.5px;
     }
 
-    .semanas-grid {
+    /* Sticky Stacking Cards Layout */
+    .semanas-sticky-wrapper {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: var(--spacing-2xl);
+      grid-template-columns: 1fr 1fr;
+      gap: var(--spacing-3xl);
+      align-items: start;
+    }
+
+    .semanas-left {
+      position: relative;
+    }
+
+    .semanas-left h2 {
+      text-align: left;
       margin-bottom: var(--spacing-2xl);
     }
 
-    @media (max-width: 1024px) {
-      .semanas-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
+    .semanas-left-sticky {
+      position: sticky;
+      top: 120px;
+      padding-right: var(--spacing-xl);
     }
 
-    @media (max-width: 768px) {
-      .semanas-grid {
-        grid-template-columns: 1fr;
-      }
+    .semanas-left-sticky p {
+      font-size: 16px;
+      line-height: 1.8;
+      color: var(--color-text);
+    }
+
+    .semanas-right {
+      position: relative;
+      height: auto;
+    }
+
+    .semanas-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      margin-bottom: var(--spacing-2xl);
     }
 
     .semana-card {
@@ -790,8 +812,30 @@
       box-shadow: var(--shadow-md);
       transition: all var(--transition-normal);
       cursor: pointer;
-      position: relative;
+      position: sticky;
       overflow: hidden;
+      top: 150px;
+      margin-bottom: -50px;
+    }
+
+    .semana-card[style*="--card-index: 0"] {
+      transform: rotate(3deg);
+      z-index: 40;
+    }
+
+    .semana-card[style*="--card-index: 1"] {
+      transform: rotate(-3deg);
+      z-index: 30;
+    }
+
+    .semana-card[style*="--card-index: 2"] {
+      transform: rotate(3deg);
+      z-index: 20;
+    }
+
+    .semana-card[style*="--card-index: 3"] {
+      transform: rotate(-3deg);
+      z-index: 10;
     }
 
     .semana-card::before {
@@ -848,6 +892,53 @@
       margin-left: auto;
       margin-right: auto;
       line-height: 1.6;
+    }
+
+    /* Mobile Responsive - Sticky Stacking Cards */
+    @media (max-width: 1024px) {
+      .semanas-sticky-wrapper {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-2xl);
+      }
+
+      .semanas-left-sticky {
+        position: static;
+        padding-right: 0;
+        margin-bottom: var(--spacing-2xl);
+      }
+
+      .semana-card {
+        top: auto;
+        margin-bottom: 0;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .semanas-sticky-wrapper {
+        grid-template-columns: 1fr;
+      }
+
+      .semanas-left h2 {
+        text-align: center;
+        margin-bottom: var(--spacing-2xl);
+      }
+
+      .semanas-left-sticky {
+        position: static;
+        padding-right: 0;
+      }
+
+      .semana-card {
+        position: static;
+        top: auto;
+        margin-bottom: var(--spacing-xl);
+        transform: none !important;
+      }
+
+      .semanas-grid {
+        flex-direction: column;
+        gap: var(--spacing-xl);
+      }
     }
 
     /* TESTIMONIOS */
@@ -1599,27 +1690,34 @@
 <section class="semanas">
   <div class="container">
     <span class="section-label">El Proceso</span>
-    <h2>4 semanas para <span class="highlight">reconstruir</span> la conexión</h2>
-    <div class="semanas-grid">
-      <div class="semana-card reveal scroll-animate">
-        <div class="numero">1</div>
-        <h3>Reconocer tu estilo</h3>
-        <p>Observa cómo comunicas hoy. Qué funciona, qué no.</p>
+    <div class="semanas-sticky-wrapper">
+      <div class="semanas-left">
+        <h2>4 semanas para <span class="highlight">reconstruir</span> la conexión</h2>
+        <div class="semanas-left-sticky">
+          <p>Cada semana tiene un enfoque específico diseñado para reconstituir la conexión paso a paso. Trabajarás en ti mismo mientras creas espacios seguros para que tu hijo vuelva a compartir.</p>
+        </div>
       </div>
-      <div class="semana-card reveal scroll-animate">
-        <div class="numero">2</div>
-        <h3>Comprender su mundo</h3>
-        <p>Entra en la experiencia escolar de tu hijo/a.</p>
-      </div>
-      <div class="semana-card reveal scroll-animate">
-        <div class="numero">3</div>
-        <h3>Escuchar con el corazón</h3>
-        <p>Practica la escucha genuina, sin juzgar.</p>
-      </div>
-      <div class="semana-card reveal scroll-animate">
-        <div class="numero">4</div>
-        <h3>Crear hábitos nuevos</h3>
-        <p>Convierte lo aprendido en conversaciones diarias.</p>
+      <div class="semanas-right">
+        <div class="semana-card reveal scroll-animate" style="--card-index: 0;">
+          <div class="numero">1</div>
+          <h3>Reconocer tu estilo</h3>
+          <p>Observa cómo comunicas hoy. Qué funciona, qué no.</p>
+        </div>
+        <div class="semana-card reveal scroll-animate" style="--card-index: 1;">
+          <div class="numero">2</div>
+          <h3>Comprender su mundo</h3>
+          <p>Entra en la experiencia escolar de tu hijo/a.</p>
+        </div>
+        <div class="semana-card reveal scroll-animate" style="--card-index: 2;">
+          <div class="numero">3</div>
+          <h3>Escuchar con el corazón</h3>
+          <p>Practica la escucha genuina, sin juzgar.</p>
+        </div>
+        <div class="semana-card reveal scroll-animate" style="--card-index: 3;">
+          <div class="numero">4</div>
+          <h3>Crear hábitos nuevos</h3>
+          <p>Convierte lo aprendido en conversaciones diarias.</p>
+        </div>
       </div>
     </div>
     <div class="semanas-note">
