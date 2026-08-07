@@ -2154,34 +2154,22 @@
     });
   });
 
-  // Semana cards scroll-driven reveal animation with ScrollTrigger
-  const semanaWrapper = document.querySelector('.semanas-sticky-wrapper');
-  if (semanaWrapper) {
-    const semanaCards = document.querySelectorAll('.semana-card');
-    const semanaSection = semanaWrapper.closest('section');
-
-    // Create timeline for staggered reveal
-    const semanaTimeline = gsap.timeline({
+  // Semana cards animations (scroll-triggered reveal)
+  gsap.utils.toArray('.semana-card').forEach((el, index) => {
+    gsap.from(el, {
+      opacity: 0,
+      y: 40,
+      duration: 0.7,
+      ease: 'power2.out',
+      delay: index * 0.15,
+      clearProps: 'transform',
       scrollTrigger: {
-        trigger: semanaSection,
-        start: 'top center',
-        end: 'bottom center',
-        pin: semanaWrapper,
-        scrub: 0.5,
-        markers: false
+        trigger: el,
+        start: 'top 85%',
+        toggleActions: 'play none none none'
       }
     });
-
-    // Animate each card appearing from bottom with stagger
-    semanaCards.forEach((card, index) => {
-      semanaTimeline.from(card, {
-        opacity: 0,
-        y: 80,
-        duration: 1.2,
-        ease: 'power2.out'
-      }, index * 1);
-    });
-  }
+  });
 
   // Testimonio cards slide-in
   gsap.utils.toArray('.testimonio-card').forEach((el, index) => {
