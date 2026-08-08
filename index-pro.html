@@ -829,7 +829,6 @@
       align-items: center;
       width: 100%;
       max-width: 340px;
-      opacity: 0;
       will-change: opacity, transform;
     }
 
@@ -2171,6 +2170,9 @@
   if (semiasSection) {
     const cards = gsap.utils.toArray('.semana-card');
 
+    // Initialize cards to invisible state
+    gsap.set(cards, { opacity: 0, y: 80 });
+
     // Create timeline pinned to section
     const tl = gsap.timeline({
       scrollTrigger: {
@@ -2182,17 +2184,17 @@
       }
     });
 
-    // Reveal each card progressively (each takes 25% of scroll distance)
+    // Reveal each card progressively while scrolling
     cards.forEach((card, index) => {
-      tl.from(
+      tl.to(
         card,
         {
-          opacity: 0,
-          y: 80,
+          opacity: 1,
+          y: 0,
           duration: 1,
           ease: 'power2.inOut'
         },
-        index * 0.25  // Stagger start times
+        index * 0.25  // Stagger: each card appears 25% into the timeline
       );
     });
   }
