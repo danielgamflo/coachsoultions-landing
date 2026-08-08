@@ -831,28 +831,28 @@
       max-width: 300px;
     }
 
-    .semanas-right .semana-card:nth-of-type(1) {
-      background: var(--color-secondary) !important;
+    .semana-card[data-card="1"] {
+      background: var(--color-secondary);
       z-index: 40;
       top: 0;
     }
 
-    .semanas-right .semana-card:nth-of-type(2) {
-      background: var(--color-primary) !important;
+    .semana-card[data-card="2"] {
+      background: var(--color-primary);
       z-index: 30;
       top: 60px;
     }
 
-    .semanas-right .semana-card:nth-of-type(3) {
-      background: #FFFFFF !important;
-      color: var(--color-text) !important;
+    .semana-card[data-card="3"] {
+      background: #FFFFFF;
+      color: var(--color-text);
       z-index: 20;
       top: 120px;
       box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
     }
 
-    .semanas-right .semana-card:nth-of-type(4) {
-      background: var(--color-accent) !important;
+    .semana-card[data-card="4"] {
+      background: var(--color-accent);
       z-index: 10;
       top: 180px;
     }
@@ -1690,22 +1690,22 @@
         </div>
       </div>
       <div class="semanas-right">
-        <div class="semana-card reveal scroll-animate" style="--card-index: 0;">
+        <div class="semana-card reveal scroll-animate" data-card="1">
           <div class="numero">1</div>
           <h3>Reconocer tu estilo</h3>
           <p>Observa cómo comunicas hoy. Qué funciona, qué no.</p>
         </div>
-        <div class="semana-card reveal scroll-animate" style="--card-index: 1;">
+        <div class="semana-card reveal scroll-animate" data-card="2">
           <div class="numero">2</div>
           <h3>Comprender su mundo</h3>
           <p>Entra en la experiencia escolar de tu hijo/a.</p>
         </div>
-        <div class="semana-card reveal scroll-animate" style="--card-index: 2;">
+        <div class="semana-card reveal scroll-animate" data-card="3">
           <div class="numero">3</div>
           <h3>Escuchar con el corazón</h3>
           <p>Practica la escucha genuina, sin juzgar.</p>
         </div>
-        <div class="semana-card reveal scroll-animate" style="--card-index: 3;">
+        <div class="semana-card reveal scroll-animate" data-card="4">
           <div class="numero">4</div>
           <h3>Crear hábitos nuevos</h3>
           <p>Convierte lo aprendido en conversaciones diarias.</p>
