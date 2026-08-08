@@ -2164,22 +2164,43 @@
     });
   });
 
-  // Semana cards animations (scroll-triggered reveal)
-  gsap.utils.toArray('.semana-card').forEach((el, index) => {
-    gsap.from(el, {
-      opacity: 0,
-      y: 40,
-      duration: 0.7,
-      ease: 'power2.out',
-      delay: index * 0.15,
-      clearProps: 'transform',
+  // Sticky stacking cards animation
+  const semiasRight = document.querySelector('.semanas-right');
+  if (semiasRight) {
+    const cards = gsap.utils.toArray('.semana-card');
+    const semiasSection = document.querySelector('.semanas-sticky-wrapper');
+
+    // Main timeline for sticky stacking effect
+    const tl = gsap.timeline({
       scrollTrigger: {
-        trigger: el,
-        start: 'top 85%',
-        toggleActions: 'play none none none'
+        trigger: semiasSection,
+        start: 'top top',
+        end: '+=1200',
+        pin: true,
+        scrub: 1,
+        markers: false
       }
     });
-  });
+
+    // Reveal each card progressively with stacking effect
+    cards.forEach((card, index) => {
+      // Stagger the reveal: each card appears 25% into the timeline
+      const startProgress = index * 0.25;
+      const endProgress = startProgress + 0.25;
+
+      tl.from(card, {
+        opacity: 0,
+        y: 60,
+        ease: 'power2.inOut'
+      }, startProgress);
+
+      tl.to(card, {
+        opacity: 1,
+        y: 0,
+        ease: 'power2.inOut'
+      }, startProgress);
+    });
+  }
 
   // Testimonio cards slide-in
   gsap.utils.toArray('.testimonio-card').forEach((el, index) => {
