@@ -831,26 +831,27 @@
       max-width: 300px;
     }
 
-    .semana-card[style*="--card-index: 0"] {
+    .semana-card:nth-child(1) {
       background: var(--color-secondary);
       z-index: 40;
       top: 0;
     }
 
-    .semana-card[style*="--card-index: 1"] {
+    .semana-card:nth-child(2) {
       background: var(--color-primary);
       z-index: 30;
       top: 60px;
     }
 
-    .semana-card[style*="--card-index: 2"] {
+    .semana-card:nth-child(3) {
       background: #FFFFFF;
       color: var(--color-text);
       z-index: 20;
       top: 120px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
     }
 
-    .semana-card[style*="--card-index: 3"] {
+    .semana-card:nth-child(4) {
       background: var(--color-accent);
       z-index: 10;
       top: 180px;
