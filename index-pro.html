@@ -819,7 +819,6 @@
       border-radius: 24px;
       text-align: center;
       box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-      transition: all var(--transition-normal);
       cursor: pointer;
       position: absolute;
       overflow: hidden;
@@ -830,6 +829,8 @@
       align-items: center;
       width: 100%;
       max-width: 340px;
+      opacity: 0;
+      will-change: opacity, transform;
     }
 
     .semana-card.card-1 {
