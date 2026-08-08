@@ -2165,40 +2165,33 @@
   });
 
   // Sticky stacking cards animation
-  const semiasRight = document.querySelector('.semanas-right');
-  if (semiasRight) {
+  const semiasSection = document.querySelector('.semanas-sticky-wrapper');
+  if (semiasSection) {
     const cards = gsap.utils.toArray('.semana-card');
-    const semiasSection = document.querySelector('.semanas-sticky-wrapper');
 
-    // Main timeline for sticky stacking effect
+    // Create timeline pinned to section
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: semiasSection,
         start: 'top top',
-        end: '+=1200',
+        end: '+=1200px',
         pin: true,
-        scrub: 1,
-        markers: false
+        scrub: 1.2
       }
     });
 
-    // Reveal each card progressively with stacking effect
+    // Reveal each card progressively (each takes 25% of scroll distance)
     cards.forEach((card, index) => {
-      // Stagger the reveal: each card appears 25% into the timeline
-      const startProgress = index * 0.25;
-      const endProgress = startProgress + 0.25;
-
-      tl.from(card, {
-        opacity: 0,
-        y: 60,
-        ease: 'power2.inOut'
-      }, startProgress);
-
-      tl.to(card, {
-        opacity: 1,
-        y: 0,
-        ease: 'power2.inOut'
-      }, startProgress);
+      tl.from(
+        card,
+        {
+          opacity: 0,
+          y: 80,
+          duration: 1,
+          ease: 'power2.inOut'
+        },
+        index * 0.25  // Stagger start times
+      );
     });
   }
 
