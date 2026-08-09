@@ -830,31 +830,32 @@
       width: 100%;
       max-width: 340px;
       will-change: opacity, transform;
+      opacity: 1;
     }
 
     .semana-card.card-1 {
       background: var(--color-secondary);
-      z-index: 40;
+      z-index: 10;
       top: 0;
     }
 
     .semana-card.card-2 {
       background: var(--color-primary);
-      z-index: 30;
+      z-index: 20;
       top: 60px;
     }
 
     .semana-card.card-3 {
       background: #FFFFFF !important;
       color: var(--color-text) !important;
-      z-index: 20;
+      z-index: 30;
       top: 120px;
       box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
     }
 
     .semana-card.card-4 {
       background: var(--color-accent) !important;
-      z-index: 10;
+      z-index: 40;
       top: 180px;
     }
 
@@ -2165,39 +2166,20 @@
     });
   });
 
-  // Sticky stacking cards animation
-  const semiasSection = document.querySelector('.semanas-sticky-wrapper');
-  if (semiasSection) {
-    const cards = gsap.utils.toArray('.semana-card');
-
-    // Initialize cards to invisible state
-    gsap.set(cards, { opacity: 0, y: 80 });
-
-    // Create timeline pinned to section
-    const tl = gsap.timeline({
+  // Reveal cards one by one on scroll
+  gsap.utils.toArray('.semana-card').forEach((card, index) => {
+    gsap.from(card, {
+      opacity: 0,
+      y: 100,
+      duration: 0.8,
+      ease: 'power2.out',
       scrollTrigger: {
-        trigger: semiasSection,
-        start: 'top top',
-        end: '+=1200px',
-        pin: true,
-        scrub: 1.2
+        trigger: card,
+        start: 'top center+=100px',
+        toggleActions: 'play none none none'
       }
     });
-
-    // Reveal each card progressively while scrolling
-    cards.forEach((card, index) => {
-      tl.to(
-        card,
-        {
-          opacity: 1,
-          y: 0,
-          duration: 1,
-          ease: 'power2.inOut'
-        },
-        index * 0.25  // Stagger: each card appears 25% into the timeline
-      );
-    });
-  }
+  });
 
   // Testimonio cards slide-in
   gsap.utils.toArray('.testimonio-card').forEach((el, index) => {
