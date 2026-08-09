@@ -50,6 +50,9 @@
       --transition-fast: 200ms cubic-bezier(0.4, 0, 0.2, 1);
       --transition-normal: 300ms cubic-bezier(0.4, 0, 0.2, 1);
       --transition-slow: 500ms cubic-bezier(0.4, 0, 0.2, 1);
+
+      --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+      --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
     }
 
     html {
@@ -84,8 +87,8 @@
         justify-content: space-between;
       }
 
-      .btn-header {
-        margin-right: 0;
+      .nav-group {
+        display: none;
       }
 
       .nav-links {
@@ -98,40 +101,17 @@
       }
 
       .btn-header {
-        padding: 8px 12px;
-        font-size: 10px;
-        white-space: nowrap;
-        min-width: auto;
+        display: none;
       }
 
-      .tomos-grid {
-        gap: 8px;
-      }
-
-      .tomo {
-        width: 70px;
-        height: 240px;
-        font-size: 11px;
-      }
-
-      .tomo-1 {
-        transform: translateY(0px) translateX(0px) rotateY(0deg) rotateX(0deg) rotateZ(0deg) !important;
-      }
-
-      .tomo-2 {
-        transform: translateY(10px) translateX(0px) rotateY(0deg) rotateX(0deg) rotateZ(0deg) scaleY(1.05) !important;
-      }
-
-      .tomo-3 {
-        transform: translateY(20px) translateX(0px) rotateY(0deg) rotateX(0deg) rotateZ(0deg) !important;
-      }
-
-      .tomo-4 {
-        transform: translateY(30px) translateX(0px) rotateY(0deg) rotateX(0deg) rotateZ(0deg) !important;
+      .hamburger-menu {
+        display: flex !important;
+        margin-right: 0;
       }
 
       .hero-content {
         padding: 0 var(--spacing-xl);
+        margin-bottom: var(--spacing-lg) !important;
       }
     }
 
@@ -195,10 +175,11 @@
       position: absolute;
       bottom: -4px;
       left: 0;
-      width: 0;
+      width: 100%;
       height: 2px;
       background: var(--color-primary);
-      transition: width var(--transition-fast);
+      opacity: 0;
+      transition: opacity var(--transition-fast);
     }
 
     .nav-links a:hover {
@@ -238,6 +219,88 @@
 
     .btn-header:active {
       transform: translateY(0);
+    }
+
+    /* HAMBURGER MENU MOBILE */
+    .hamburger-menu {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      width: 24px;
+      height: 24px;
+      align-items: center;
+      justify-content: center;
+      z-index: 101;
+    }
+
+    .hamburger-line {
+      width: 24px;
+      height: 2px;
+      background: var(--color-text);
+      border-radius: 1px;
+      transition: all var(--transition-fast);
+    }
+
+    .hamburger-menu.active .hamburger-line:nth-child(1) {
+      transform: rotate(45deg) translate(8px, 8px);
+    }
+
+    .hamburger-menu.active .hamburger-line:nth-child(2) {
+      opacity: 0;
+    }
+
+    .hamburger-menu.active .hamburger-line:nth-child(3) {
+      transform: rotate(-45deg) translate(7px, -7px);
+    }
+
+    /* MOBILE NAVIGATION DRAWER */
+    .mobile-nav-drawer {
+      position: fixed;
+      top: 60px;
+      right: -280px;
+      width: 280px;
+      height: calc(100vh - 60px);
+      background: white;
+      box-shadow: -2px 0 8px rgba(0, 0, 0, 0.1);
+      padding: var(--spacing-lg);
+      display: flex;
+      flex-direction: column;
+      gap: var(--spacing-md);
+      z-index: 100;
+      transition: right var(--transition-normal);
+      overflow-y: auto;
+    }
+
+    .mobile-nav-drawer.active {
+      right: 0;
+    }
+
+    .mobile-nav-link {
+      font-size: 16px;
+      font-weight: 500;
+      color: var(--color-text);
+      text-decoration: none;
+      padding: var(--spacing-md) 0;
+      border-bottom: 1px solid var(--color-border);
+      transition: color var(--transition-fast);
+    }
+
+    .mobile-nav-link:hover {
+      color: var(--color-primary);
+    }
+
+    .mobile-nav-drawer.active ~ body {
+      overflow: hidden;
+    }
+
+    @media (min-width: 769px) {
+      .mobile-nav-drawer {
+        display: none;
+      }
     }
 
     /* HERO SECTION - IMPACTANTE */
@@ -358,17 +421,16 @@
       position: absolute;
       top: 50%;
       left: 50%;
-      width: 0;
-      height: 0;
+      width: 300px;
+      height: 300px;
       background: rgba(255, 255, 255, 0.2);
       border-radius: 50%;
-      transform: translate(-50%, -50%);
-      transition: width var(--transition-normal), height var(--transition-normal);
+      transform: translate(-50%, -50%) scale(0);
+      transition: transform var(--transition-normal);
     }
 
     .btn-primary:hover::before {
-      width: 300px;
-      height: 300px;
+      transform: translate(-50%, -50%) scale(1);
     }
 
     .btn-primary:hover {
@@ -409,6 +471,28 @@
       z-index: 1;
     }
 
+    .tomos-image {
+      max-width: 60%;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+    }
+
+    @media (max-width: 768px) {
+      .tomos-image {
+        max-width: 85%;
+      }
+
+      .tomos-container {
+        margin-top: 0;
+        margin-bottom: 0;
+      }
+
+      .hero > div[style*="margin-bottom"] {
+        margin-bottom: var(--spacing-sm) !important;
+      }
+    }
+
     @keyframes fadeInRight {
       from {
         opacity: 0;
@@ -420,85 +504,7 @@
       }
     }
 
-    .tomos-grid {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 24px;
-      perspective: 1200px;
-    }
 
-    .tomo {
-      width: 90px;
-      height: 320px;
-      border-radius: var(--radius-lg);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: space-between;
-      padding: var(--spacing-lg);
-      color: white;
-      font-size: 12px;
-      font-weight: 600;
-      box-shadow: var(--shadow-lg);
-      transition: all var(--transition-normal);
-      cursor: pointer;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .tomo::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: linear-gradient(180deg, rgba(255,255,255,0.1) 0%, transparent 50%);
-      pointer-events: none;
-    }
-
-    .tomo-1 {
-      background: linear-gradient(135deg, #26215C 0%, #3d2f7a 100%);
-      transform: translateY(0px) translateX(-60px) rotateY(-15deg) rotateX(5deg) rotateZ(-8deg);
-    }
-
-    .tomo-2 {
-      background: linear-gradient(135deg, var(--color-primary) 0%, #E08A1A 100%);
-      transform: translateY(30px) translateX(-20px) rotateY(0deg) rotateX(0deg) rotateZ(2deg) scaleY(1.05);
-      z-index: 2;
-    }
-
-    .tomo-3 {
-      background: linear-gradient(135deg, #26215C 0%, #3d2f7a 100%);
-      transform: translateY(60px) translateX(20px) rotateY(15deg) rotateX(-5deg) rotateZ(6deg);
-    }
-
-    .tomo-4 {
-      background: linear-gradient(135deg, var(--color-primary) 0%, #E08A1A 100%);
-      transform: translateY(90px) translateX(60px) rotateY(25deg) rotateX(-8deg) rotateZ(10deg);
-      opacity: 0.8;
-    }
-
-    .tomo:hover {
-      transform: translateY(-20px) !important;
-      box-shadow: var(--shadow-xl);
-    }
-
-    .tomo-numero {
-      font-size: 40px;
-      font-weight: 800;
-      line-height: 1;
-    }
-
-    .tomo-titulo {
-      text-align: center;
-      font-size: 11px;
-      line-height: 1.4;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-    }
 
     @media (max-width: 1024px) {
       .hero {
@@ -508,13 +514,7 @@
       }
 
       .tomos-container {
-        height: 350px;
-      }
-
-      .tomo {
-        width: 70px;
-        height: 260px;
-        padding: var(--spacing-md);
+        height: auto;
       }
     }
 
@@ -590,7 +590,7 @@
       padding: var(--spacing-2xl);
       border-radius: var(--radius-lg);
       margin: var(--spacing-2xl) 0;
-      border-left: 4px solid var(--color-primary);
+      border-top: 2px solid var(--color-primary);
       font-size: 16px;
       font-weight: 500;
       line-height: 1.7;
@@ -625,7 +625,7 @@
 
     .accent-green-bg {
       background-color: rgba(45, 134, 89, 0.08);
-      border-left: 4px solid var(--color-accent);
+      border-top: 2px solid var(--color-accent);
       padding-left: var(--spacing-lg);
     }
 
@@ -696,7 +696,7 @@
       padding: var(--spacing-2xl);
       background: white;
       border-radius: var(--radius-lg);
-      border-left: 4px solid var(--color-primary);
+      border-top: 2px solid var(--color-primary);
       box-shadow: var(--shadow-sm);
       transition: all var(--transition-normal);
       cursor: pointer;
@@ -796,72 +796,54 @@
     }
 
     .semanas-right {
-      position: relative;
-      height: 600px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      max-width: 700px;
+      margin: 0 auto;
     }
 
     .semanas-grid {
-      display: flex;
-      flex-direction: column;
-      gap: 30px;
-      margin-bottom: var(--spacing-2xl);
-      position: relative;
-      width: 100%;
-      height: 100%;
+      display: contents;
     }
 
     .semana-card {
       color: white;
-      padding: var(--spacing-3xl);
+      padding: var(--spacing-2xl);
       border-radius: 24px;
       text-align: center;
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
       cursor: pointer;
-      position: absolute;
-      overflow: hidden;
-      min-height: 380px;
+      min-height: 280px;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      width: 100%;
-      max-width: 340px;
-      will-change: opacity, transform;
-      opacity: 0;
+      transition: transform 300ms cubic-bezier(0.23, 1, 0.32, 1);
     }
 
     .semana-card.card-1 {
       background: var(--color-secondary);
-      z-index: 10;
-      top: 0;
+    }
+
+    .semana-card.card-1 {
+      background: var(--color-secondary);
     }
 
     .semana-card.card-2 {
       background: var(--color-primary);
-      z-index: 20;
-      top: 60px;
     }
 
     .semana-card.card-3 {
       background: #FFFFFF !important;
       color: var(--color-text) !important;
-      z-index: 30;
-      top: 120px;
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
     }
 
     .semana-card.card-4 {
       background: var(--color-accent) !important;
-      z-index: 40;
-      top: 180px;
     }
 
     .semana-card:hover {
-      transform: translateY(-12px);
-      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.4);
+      transform: scale(1.05) rotate(1deg) !important;
     }
 
     .semana-card .numero {
@@ -895,7 +877,7 @@
       text-align: center;
       color: var(--color-text);
       font-size: 15px;
-      margin-top: var(--spacing-2xl);
+      margin-top: var(--spacing-md);
       font-weight: 600;
       padding: var(--spacing-lg) var(--spacing-xl);
       background: rgba(45, 134, 89, 0.08);
@@ -908,30 +890,78 @@
 
     /* Mobile Responsive - Sticky Stacking Cards */
     @media (max-width: 768px) {
+      .semanas {
+        padding: var(--spacing-2xl) 0;
+      }
+
+      .semanas h2 {
+        font-size: clamp(20px, 3vw, 28px);
+        margin-bottom: var(--spacing-xl);
+      }
+
       .semanas-sticky-wrapper {
         grid-template-columns: 1fr;
+        gap: var(--spacing-2xl);
       }
 
       .semanas-left h2 {
         text-align: center;
-        margin-bottom: var(--spacing-2xl);
+        margin-bottom: var(--spacing-lg);
+        font-size: clamp(22px, 4vw, 32px);
       }
 
       .semanas-left-sticky {
         position: static;
         padding-right: 0;
+        margin-bottom: var(--spacing-lg);
+      }
+
+      .semanas-left-sticky p {
+        font-size: clamp(14px, 2vw, 18px);
+        line-height: 1.6;
+      }
+
+      .semanas-right {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
+        max-width: 100%;
       }
 
       .semana-card {
         position: static;
         top: auto;
-        margin-bottom: var(--spacing-xl);
+        margin-bottom: 0;
         transform: none !important;
+        min-height: 200px;
+        padding: var(--spacing-xl) var(--spacing-lg);
+      }
+
+      .semana-card .numero {
+        font-size: 48px;
+      }
+
+      .semana-card h3 {
+        font-size: clamp(16px, 2.5vw, 18px);
+        margin-bottom: var(--spacing-sm);
+      }
+
+      .semana-card p {
+        font-size: clamp(13px, 1.5vw, 14px);
+      }
+
+      .semanas-note {
+        text-align: center;
+        font-size: 13px;
+        padding: var(--spacing-md) var(--spacing-lg);
+        margin-top: var(--spacing-lg);
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
       }
 
       .semanas-grid {
         flex-direction: column;
-        gap: var(--spacing-xl);
+        gap: var(--spacing-lg);
       }
     }
 
@@ -958,12 +988,12 @@
 
     .video-vertical {
       aspect-ratio: 9 / 16;
-      min-height: 300px;
-      background: linear-gradient(135deg, var(--color-secondary) 0%, #3d2f7a 100%);
+      width: 100%;
+      background: linear-gradient(135deg, var(--color-secondary) 0%, #3d2f7a 100%) !important;
       border-radius: var(--radius-lg);
       overflow: hidden;
       box-shadow: var(--shadow-md);
-      display: flex;
+      display: flex !important;
       align-items: center;
       justify-content: center;
       color: white;
@@ -971,6 +1001,9 @@
       font-size: 14px;
       position: relative;
       transition: all var(--transition-normal);
+      border: 2px solid rgba(255, 255, 255, 0.1);
+      opacity: 1 !important;
+      transform: translateY(0) !important;
     }
 
     .video-vertical:hover {
@@ -982,6 +1015,28 @@
       content: '▶';
       font-size: 48px;
       opacity: 0.5;
+      display: none;
+    }
+
+    .video-placeholder {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: var(--spacing-md);
+      text-align: center;
+      padding: var(--spacing-lg);
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    .video-placeholder svg {
+      color: rgba(255, 255, 255, 0.6);
+    }
+
+    .video-placeholder p {
+      font-size: 13px;
+      margin: 0;
+      font-weight: 500;
     }
 
     .testimonios > .container {
@@ -1139,6 +1194,96 @@
       }
     }
 
+    /* COACHES GRID (4 coaches en grid) */
+    .coaches-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--spacing-2xl);
+      margin-top: var(--spacing-3xl);
+    }
+
+    .coach-card {
+      background: white;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      transition: all var(--transition-normal);
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+
+    .coach-card:hover {
+      box-shadow: var(--shadow-md);
+      transform: translateY(-4px);
+    }
+
+    .coach-visual {
+      width: 100%;
+      height: 200px;
+      background: linear-gradient(135deg, #D8B4A0 0%, #C8A490 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--color-text-light);
+      font-size: 14px;
+      flex-shrink: 0;
+    }
+
+    .coach-info {
+      padding: var(--spacing-2xl);
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .coach-info h3 {
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: var(--spacing-sm);
+      color: var(--color-text);
+    }
+
+    .coach-role {
+      color: var(--color-primary);
+      font-weight: 700;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: var(--spacing-lg) !important;
+    }
+
+    .coach-info p {
+      font-size: 14px;
+      color: var(--color-text-muted);
+      line-height: 1.6;
+      margin-bottom: var(--spacing-sm);
+    }
+
+    .coach-info em {
+      font-style: italic;
+      color: var(--color-text-light);
+    }
+
+    @media (max-width: 768px) {
+      .coaches-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-xl);
+      }
+
+      .coach-visual {
+        height: 150px;
+      }
+
+      .coach-info {
+        padding: var(--spacing-lg);
+      }
+
+      .coach-info h3 {
+        font-size: 18px;
+      }
+    }
+
     /* SECCIÓN PRECIO */
     .precio {
       padding: var(--spacing-3xl) 0;
@@ -1214,7 +1359,7 @@
       margin: var(--spacing-2xl) auto;
       padding: var(--spacing-lg) var(--spacing-xl);
       background: rgba(0, 82, 204, 0.08);
-      border-left: 4px solid var(--color-secondary);
+      border-top: 2px solid var(--color-secondary);
       border-radius: var(--radius-md);
       font-weight: 500;
       max-width: 800px;
@@ -1303,8 +1448,8 @@
 
     .faq-item {
       border-bottom: 1px solid var(--color-border);
-      padding: var(--spacing-2xl) 0;
       transition: all var(--transition-normal);
+      min-height: 60px;
     }
 
     .faq-item:last-child {
@@ -1320,6 +1465,7 @@
       font-weight: 600;
       color: var(--color-secondary);
       transition: color var(--transition-fast);
+      padding: var(--spacing-lg) 0;
     }
 
     .faq-question:hover {
@@ -1346,18 +1492,66 @@
     }
 
     .faq-answer {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height var(--transition-normal), padding-top var(--transition-normal);
-      padding-top: 0;
+      display: none;
+      opacity: 0;
       color: var(--color-text-muted);
       font-size: 14px;
       line-height: 1.7;
+      padding-bottom: var(--spacing-lg);
     }
 
     .faq-item.active .faq-answer {
-      max-height: 500px;
-      padding-top: var(--spacing-lg);
+      display: block;
+      opacity: 1;
+      animation: slideDown 400ms var(--ease-out);
+    }
+
+    @keyframes slideDown {
+      from {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .faq-answer {
+        transition: none;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .faq {
+        padding: var(--spacing-2xl) 0;
+      }
+
+      .faq h2 {
+        font-size: clamp(24px, 3.5vw, 32px);
+        margin-bottom: var(--spacing-2xl);
+      }
+
+      .faq-question {
+        font-size: clamp(14px, 2vw, 16px);
+        font-weight: 600;
+        gap: var(--spacing-md);
+        padding: var(--spacing-sm) 0;
+        align-items: center;
+      }
+
+      .faq-icon {
+        width: 20px;
+        height: 20px;
+        font-size: 12px;
+      }
+
+      .faq-answer {
+        padding-bottom: var(--spacing-sm);
+        font-size: 12px;
+        line-height: 1.5;
+      }
     }
 
     /* ANIMACIONES EN SCROLL */
@@ -1521,13 +1715,12 @@
       }
     }
 
-    /* MODERNIZATION: Glow Effect */
     .btn-primary:hover {
-      box-shadow: 0 0 30px rgba(255, 102, 51, 0.6);
+      box-shadow: var(--shadow-lg);
     }
 
     .btn-header:hover {
-      box-shadow: 0 0 20px rgba(255, 102, 51, 0.5);
+      box-shadow: var(--shadow-md);
     }
 
     /* Glassmorphism effect */
@@ -1544,9 +1737,7 @@
     }
 
     .hero {
-      background: linear-gradient(-45deg, #ffffff, #F9F7F3, #ffffff, #F1EFE8);
-      background-size: 400% 400%;
-      animation: gradientShift 15s ease infinite;
+      background: #fafbfa;
     }
 
     /* Smooth transitions */
@@ -1558,16 +1749,17 @@
     a::after {
       content: '';
       position: absolute;
-      width: 0;
+      width: 100%;
       height: 2px;
       bottom: -5px;
       left: 0;
       background: var(--color-primary);
-      transition: width var(--transition-normal);
+      opacity: 0;
+      transition: opacity var(--transition-normal);
     }
 
     a:hover::after {
-      width: 100%;
+      opacity: 1;
     }
 
     /* Micro-interaction: Input focus */
@@ -1584,7 +1776,7 @@
 
 <!-- HEADER -->
 <header id="header">
-  <div style="display: flex; align-items: center; width: 100%; padding: 0 var(--spacing-xl);">
+  <div style="display: flex; align-items: center; width: 100%; padding: 0 var(--spacing-xl); justify-content: space-between;">
     <div class="logo">Cosoulutions</div>
     <div class="nav-group">
       <nav class="nav-links">
@@ -1593,10 +1785,25 @@
         <a href="#testimonios">Testimonios</a>
         <a href="#faq">Preguntas</a>
       </nav>
-      <button class="btn-header">Quiero mis 4 tomos →</button>
+      <button class="btn-header">Comenzar el programa →</button>
     </div>
+    <!-- Hamburger Menu Mobile -->
+    <button class="hamburger-menu" id="hamburgerMenu" aria-label="Abrir menú de navegación" aria-expanded="false">
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+    </button>
   </div>
 </header>
+
+<!-- Mobile Navigation Drawer -->
+<nav class="mobile-nav-drawer" id="mobileNav">
+  <a href="#tomos" class="mobile-nav-link">Producto</a>
+  <a href="#mecanismo" class="mobile-nav-link">Método</a>
+  <a href="#testimonios" class="mobile-nav-link">Testimonios</a>
+  <a href="#faq" class="mobile-nav-link">Preguntas</a>
+  <button class="btn-header" style="width: 100%; margin-top: var(--spacing-lg);">Comenzar el programa →</button>
+</nav>
 
 <!-- HERO -->
 <section class="hero">
@@ -1605,30 +1812,17 @@
       <h1>Tu hijo dejó de contarte qué pasa en el <span class="highlight">colegio</span></h1>
       <p class="hero-subheading">No es un problema tuyo. Es un mecanismo del cerebro. Descubre cómo reconstruir esa conexión en 4 semanas.</p>
       <div class="hero-cta-group">
-        <button class="btn-primary">Quiero mis 4 tomos →</button>
+        <button class="btn-primary">Comenzar el programa →</button>
         <button class="btn-secondary">Ver cómo funciona</button>
       </div>
     </div>
 
+    <div style="text-align: center; margin-bottom: var(--spacing-2xl); width: 100%;">
+      <p style="color: var(--color-text-muted); font-size: 14px; font-weight: 500;">4 módulos interactivos • 1 semana cada uno</p>
+    </div>
+
     <div class="tomos-container" id="tomos">
-      <div class="tomos-grid">
-        <div class="tomo tomo-1" tabindex="0">
-          <div class="tomo-numero">1</div>
-          <div class="tomo-titulo">Reconocer tu estilo</div>
-        </div>
-        <div class="tomo tomo-2" tabindex="0">
-          <div class="tomo-numero">2</div>
-          <div class="tomo-titulo">Comprender su mundo</div>
-        </div>
-        <div class="tomo tomo-3" tabindex="0">
-          <div class="tomo-numero">3</div>
-          <div class="tomo-titulo">Escuchar con corazón</div>
-        </div>
-        <div class="tomo tomo-4" tabindex="0">
-          <div class="tomo-numero">4</div>
-          <div class="tomo-titulo">Crear hábitos</div>
-        </div>
-      </div>
+      <img src="images/tomos-hero.png" alt="4 tomos: Reconocer tu estilo, Comprender su mundo, Escuchar con corazón, Crear hábitos" class="tomos-image">
     </div>
   </div>
 </section>
@@ -1690,32 +1884,32 @@
         <div class="semanas-left-sticky">
           <p>Cada semana tiene un enfoque específico diseñado para reconstituir la conexión paso a paso. Trabajarás en ti mismo mientras creas espacios seguros para que tu hijo vuelva a compartir.</p>
         </div>
+        <div class="semanas-note">
+          ✨ +60 preguntas guiadas • Reflexiones profundas • Tareas prácticas semanales
+        </div>
       </div>
       <div class="semanas-right">
-        <div class="semana-card reveal scroll-animate card-1" data-card="1">
+        <div class="semana-card card-1" data-card="1">
           <div class="numero">1</div>
           <h3>Reconocer tu estilo</h3>
           <p>Observa cómo comunicas hoy. Qué funciona, qué no.</p>
         </div>
-        <div class="semana-card reveal scroll-animate card-2" data-card="2">
+        <div class="semana-card card-2" data-card="2">
           <div class="numero">2</div>
           <h3>Comprender su mundo</h3>
           <p>Entra en la experiencia escolar de tu hijo/a.</p>
         </div>
-        <div class="semana-card reveal scroll-animate card-3" data-card="3">
+        <div class="semana-card card-3" data-card="3">
           <div class="numero">3</div>
           <h3>Escuchar con el corazón</h3>
           <p>Practica la escucha genuina, sin juzgar.</p>
         </div>
-        <div class="semana-card reveal scroll-animate card-4" data-card="4">
+        <div class="semana-card card-4" data-card="4">
           <div class="numero">4</div>
           <h3>Crear hábitos nuevos</h3>
           <p>Convierte lo aprendido en conversaciones diarias.</p>
         </div>
       </div>
-    </div>
-    <div class="semanas-note">
-      ✨ +60 preguntas guiadas • Reflexiones profundas • Tareas prácticas semanales
     </div>
   </div>
 </section>
@@ -1728,10 +1922,38 @@
 
     <!-- Videos Verticales -->
     <div class="testimonios-videos">
-      <div class="video-vertical scroll-animate">Testimonio Video 1</div>
-      <div class="video-vertical scroll-animate">Testimonio Video 2</div>
-      <div class="video-vertical scroll-animate">Testimonio Video 3</div>
-      <div class="video-vertical scroll-animate">Testimonio Video 4</div>
+      <div class="video-vertical scroll-animate">
+        <div class="video-placeholder">
+          <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M16 10v28l20-14-20-14z" fill="currentColor" opacity="0.6"/>
+          </svg>
+          <p>Video de testimonio</p>
+        </div>
+      </div>
+      <div class="video-vertical scroll-animate">
+        <div class="video-placeholder">
+          <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M16 10v28l20-14-20-14z" fill="currentColor" opacity="0.6"/>
+          </svg>
+          <p>Video de testimonio</p>
+        </div>
+      </div>
+      <div class="video-vertical scroll-animate">
+        <div class="video-placeholder">
+          <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M16 10v28l20-14-20-14z" fill="currentColor" opacity="0.6"/>
+          </svg>
+          <p>Video de testimonio</p>
+        </div>
+      </div>
+      <div class="video-vertical scroll-animate">
+        <div class="video-placeholder">
+          <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M16 10v28l20-14-20-14z" fill="currentColor" opacity="0.6"/>
+          </svg>
+          <p>Video de testimonio</p>
+        </div>
+      </div>
     </div>
 
     <h3 style="font-size: 24px; color: var(--color-text); margin-bottom: var(--spacing-2xl); font-weight: 600;">Historias de transformación</h3>
@@ -1788,72 +2010,55 @@
   </div>
 </section>
 
-<!-- RICARDO -->
+<!-- EQUIPO DE COACHES -->
 <section class="ricardo">
   <div class="container">
     <span class="section-label">Quién Te Acompaña</span>
-    <div class="ricardo-grid">
-      <div class="ricardo-visual reveal">
-        📸 Foto de Ricardo
-      </div>
-      <div class="ricardo-content reveal">
-        <h2>Ricardo Cañete</h2>
-        <p class="role">Docente • Magíster en Gestión y Liderazgo Educacional • Coach</p>
-        <p>Docente vinculado con colegios, posteriormente en Universidades e institutos profesionales. Diseño programas de coaching y autocoaching orientados a la reflexión, la gestión emocional y la acción.</p>
-        <p>Mi experiencia académica la integro con herramientas de comunicación, liderazgo y toma de decisiones. Mi metodología es sencilla: <strong>cómo descubrimos, cómo hacemos y cómo actuamos.</strong></p>
-        <p><em>"Nuestro propósito es transformar la reflexión en acciones que mejoren la vida personal, familiar y profesional."</em></p>
-      </div>
-    </div>
-  </div>
-</section>
+    <h2>Nuestro <span class="highlight">equipo</span></h2>
+    <div class="coaches-grid">
 
-<!-- BARBARA -->
-<section class="ricardo">
-  <div class="container">
-    <div class="ricardo-grid">
-      <div class="ricardo-visual reveal">
-        📸 Foto de Bárbara
+      <!-- Ricardo -->
+      <div class="coach-card reveal">
+        <div class="coach-visual">📸 Foto de Ricardo</div>
+        <div class="coach-info">
+          <h3>Ricardo Cañete</h3>
+          <p class="coach-role">Docente • Magíster en Gestión y Liderazgo Educacional • Coach</p>
+          <p>Docente vinculado con colegios, posteriormente en Universidades e institutos profesionales. Diseño programas de coaching orientados a la reflexión y la gestión emocional.</p>
+          <p><em>"Transformar la reflexión en acciones que mejoren la vida personal y familiar."</em></p>
+        </div>
       </div>
-      <div class="ricardo-content reveal">
-        <h2>Bárbara</h2>
-        <p class="role">Relacionadora Pública • Marketing • Especialista en Ventas</p>
-        <p>Relacionadora pública con mención en Marketing, especialista en ventas y gestión comercial. Cuento con experiencia en coordinación de proyectos, postventa y atención de clientes.</p>
-        <p>Me destaco por mi capacidad para organizar procesos y resolver situaciones de manera efectiva. Integro la comunicación estratégica con una mirada comercial orientada al logro de resultados.</p>
-        <p><em>"Mi propósito es construir relaciones de confianza y generar soluciones que aporten valor."</em></p>
-      </div>
-    </div>
-  </div>
-</section>
 
-<!-- ALEJANDRA -->
-<section class="ricardo">
-  <div class="container">
-    <div class="ricardo-grid">
-      <div class="ricardo-visual reveal">
-        📸 Foto de Alejandra
+      <!-- Bárbara -->
+      <div class="coach-card reveal">
+        <div class="coach-visual">📸 Foto de Bárbara</div>
+        <div class="coach-info">
+          <h3>Bárbara</h3>
+          <p class="coach-role">Relacionadora Pública • Marketing • Coach</p>
+          <p>Especialista en ventas y gestión comercial con experiencia en coordinación de proyectos. Integra comunicación estratégica con énfasis en relaciones de confianza.</p>
+          <p><em>"Construir relaciones de confianza y generar soluciones que aporten valor."</em></p>
+        </div>
       </div>
-      <div class="ricardo-content reveal">
-        <h2>Alejandra</h2>
-        <p class="role">Docente de Inglés • Coach Personal y Familiar</p>
-        <p>Docente en el área de inglés, coach personal y familiar. Vinculada a colegios y posteriormente docente universitaria con experiencia en desarrollo de personas.</p>
-        <p><em>Datos completos en actualización...</em></p>
-      </div>
-    </div>
-  </div>
-</section>
 
-<!-- RODRIGO -->
-<section class="ricardo">
-  <div class="container">
-    <div class="ricardo-grid">
-      <div class="ricardo-visual reveal">
-        📸 Foto de Rodrigo
+      <!-- Alejandra -->
+      <div class="coach-card reveal">
+        <div class="coach-visual">📸 Foto de Alejandra</div>
+        <div class="coach-info">
+          <h3>Alejandra</h3>
+          <p class="coach-role">Docente de Inglés • Coach Personal y Familiar</p>
+          <p>Docente universitaria con experiencia en desarrollo de personas. Coach personal y familiar con especialización en conexión emocional.</p>
+        </div>
       </div>
-      <div class="ricardo-content reveal">
-        <h2>Rodrigo</h2>
-        <p class="role">Ingeniero Comercial</p>
-        <p><em>Datos completos en actualización...</em></p>
+
+      <!-- Rodrigo -->
+      <div class="coach-card reveal">
+        <div class="coach-visual">📸 Foto de Rodrigo</div>
+        <div class="coach-info">
+          <h3>Rodrigo</h3>
+          <p class="coach-role">Ingeniero Comercial • Coach</p>
+          <p>Especialista en gestión y transformación organizacional con enfoque en liderazgo familiar.</p>
+        </div>
       </div>
+
     </div>
   </div>
 </section>
@@ -1866,7 +2071,11 @@
     
     <div class="precio-box reveal">
       <div class="precio-amount">USD 35.50</div>
-      <div class="precio-description">Para los 4 tomos completos</div>
+      <div class="precio-description">Acceso de 4 semanas al programa + comunidad + acompañamiento</div>
+    </div>
+
+    <div class="garantia reveal">
+      ✓ Si después de revisar los 4 tomos sientes que no es lo que esperabas, te devolvemos tu dinero. Sin preguntas.
     </div>
 
     <p class="precio-note">Una sesión individual de coaching cuesta USD 40-70. Aquí tienes 4 semanas completas.</p>
@@ -1892,11 +2101,7 @@
       </div>
     </div>
 
-    <div class="garantia reveal">
-      ✓ Si después de revisar los 4 tomos sientes que no es lo que esperabas, te devolvemos tu dinero. Sin preguntas.
-    </div>
-
-    <button class="btn-primary">Quiero mis 4 tomos →</button>
+    <button class="btn-primary">Comenzar el programa →</button>
   </div>
 </section>
 
@@ -1995,7 +2200,7 @@
   <div class="container">
     <h2>Tu hijo necesita que <span class="highlight">empieces hoy</span></h2>
     <p>No necesitas estar "listo". Necesitas estar dispuesto.</p>
-    <button class="btn-primary">Quiero mis 4 tomos →</button>
+    <button class="btn-primary">Comenzar el programa →</button>
   </div>
 </section>
 
@@ -2044,6 +2249,7 @@
       item.classList.toggle('active');
     });
   });
+
 
   // Smooth scroll for nav links
   document.querySelectorAll('a[href^="#"]').forEach(link => {
@@ -2269,6 +2475,37 @@
       toggleActions: 'play none none none'
     }
   });
+
+  // MOBILE NAVIGATION TOGGLE
+  const hamburgerMenu = document.getElementById('hamburgerMenu');
+  const mobileNav = document.getElementById('mobileNav');
+
+  if (hamburgerMenu) {
+    hamburgerMenu.addEventListener('click', function() {
+      hamburgerMenu.classList.toggle('active');
+      mobileNav.classList.toggle('active');
+      hamburgerMenu.setAttribute('aria-expanded', hamburgerMenu.classList.contains('active'));
+    });
+
+    // Cerrar menú al hacer click en un link
+    const mobileNavLinks = mobileNav.querySelectorAll('.mobile-nav-link, .btn-header');
+    mobileNavLinks.forEach(link => {
+      link.addEventListener('click', function() {
+        hamburgerMenu.classList.remove('active');
+        mobileNav.classList.remove('active');
+        hamburgerMenu.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    // Cerrar menú si se hace scroll
+    window.addEventListener('scroll', function() {
+      if (hamburgerMenu.classList.contains('active')) {
+        hamburgerMenu.classList.remove('active');
+        mobileNav.classList.remove('active');
+        hamburgerMenu.setAttribute('aria-expanded', 'false');
+      }
+    });
+  }
 </script>
 
 </body>
