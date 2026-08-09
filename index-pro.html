@@ -830,7 +830,7 @@
       width: 100%;
       max-width: 340px;
       will-change: opacity, transform;
-      opacity: 1;
+      opacity: 0;
     }
 
     .semana-card.card-1 {
@@ -2166,20 +2166,36 @@
     });
   });
 
-  // Reveal cards one by one on scroll
-  gsap.utils.toArray('.semana-card').forEach((card, index) => {
-    gsap.from(card, {
-      opacity: 0,
-      y: 100,
-      duration: 0.8,
-      ease: 'power2.out',
+  // Scroll-driven stacking cards reveal
+  const semiasWrapper = document.querySelector('.semanas-sticky-wrapper');
+  if (semiasWrapper) {
+    const cards = gsap.utils.toArray('.semana-card');
+
+    // Create a timeline for scroll-driven animation
+    const tl = gsap.timeline({
       scrollTrigger: {
-        trigger: card,
-        start: 'top center+=100px',
-        toggleActions: 'play none none none'
+        trigger: semiasWrapper,
+        start: 'top center',
+        end: 'bottom center',
+        scrub: 0.5,
+        markers: false
       }
     });
-  });
+
+    // Each card reveals progressively during scroll
+    cards.forEach((card, index) => {
+      tl.to(
+        card,
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.5,
+          ease: 'none'
+        },
+        index * 0.15
+      );
+    });
+  }
 
   // Testimonio cards slide-in
   gsap.utils.toArray('.testimonio-card').forEach((el, index) => {
