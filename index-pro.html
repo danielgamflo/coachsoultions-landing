@@ -1036,7 +1036,6 @@
       overflow: hidden;
       box-shadow: var(--shadow-md);
       display: flex !important;
-      flex-direction: column;
       align-items: center;
       justify-content: center;
       color: white;
@@ -1084,7 +1083,7 @@
 
     .video-player {
       width: 100%;
-      flex: 1;
+      height: 100%;
       object-fit: cover;
       background: #000;
     }
@@ -1094,10 +1093,8 @@
       font-weight: 600;
       color: var(--color-secondary);
       text-align: center;
-      margin: 0;
-      padding: var(--spacing-sm) 0;
-      background: rgba(0, 0, 0, 0.3);
-      width: 100%;
+      margin: var(--spacing-md) 0 0 0;
+      padding: 0;
     }
 
     .testimonios > .container {
@@ -2000,37 +1997,45 @@
 
     <!-- Videos Verticales -->
     <div class="testimonios-videos">
-      <div class="video-vertical scroll-animate">
-        <video controls playsinline class="video-player">
-          <source src="images/testimonios-01.mp4" type="video/mp4">
-          Tu navegador no soporta videos
-        </video>
-        <span class="video-label">Caso de Paulina</span>
-      </div>
-      <div class="video-vertical scroll-animate">
-        <video controls playsinline class="video-player">
-          <source src="images/testimonios-02.mp4" type="video/mp4">
-          Tu navegador no soporta videos
-        </video>
-        <span class="video-label">Caso de Ximena</span>
-      </div>
-      <div class="video-vertical scroll-animate">
-        <div class="video-placeholder">
-          <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M16 10v28l20-14-20-14z" fill="currentColor" opacity="0.6"/>
-          </svg>
-          <p>Próximamente</p>
+      <div class="video-item">
+        <div class="video-vertical scroll-animate">
+          <video controls playsinline class="video-player">
+            <source src="images/testimonios-01.mp4" type="video/mp4">
+            Tu navegador no soporta videos
+          </video>
         </div>
-        <span class="video-label">Caso de Carolina</span>
+        <p class="video-label">Caso de Paulina</p>
       </div>
-      <div class="video-vertical scroll-animate">
-        <div class="video-placeholder">
-          <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M16 10v28l20-14-20-14z" fill="currentColor" opacity="0.6"/>
-          </svg>
-          <p>Próximamente</p>
+      <div class="video-item">
+        <div class="video-vertical scroll-animate">
+          <video controls playsinline class="video-player">
+            <source src="images/testimonios-02.mp4" type="video/mp4">
+            Tu navegador no soporta videos
+          </video>
         </div>
-        <span class="video-label">Caso de Andrés</span>
+        <p class="video-label">Caso de Ximena</p>
+      </div>
+      <div class="video-item">
+        <div class="video-vertical scroll-animate">
+          <div class="video-placeholder">
+            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M16 10v28l20-14-20-14z" fill="currentColor" opacity="0.6"/>
+            </svg>
+            <p>Próximamente</p>
+          </div>
+        </div>
+        <p class="video-label">Caso de Carolina</p>
+      </div>
+      <div class="video-item">
+        <div class="video-vertical scroll-animate">
+          <div class="video-placeholder">
+            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M16 10v28l20-14-20-14z" fill="currentColor" opacity="0.6"/>
+            </svg>
+            <p>Próximamente</p>
+          </div>
+        </div>
+        <p class="video-label">Caso de Andrés</p>
       </div>
     </div>
 
