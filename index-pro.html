@@ -1246,7 +1246,7 @@
       transition: all var(--transition-normal);
       display: flex;
       flex-direction: column;
-      height: 100%;
+      height: auto;
     }
 
     .coach-card:hover {
@@ -1268,7 +1268,6 @@
 
     .coach-info {
       padding: var(--spacing-2xl);
-      flex-grow: 1;
       display: flex;
       flex-direction: column;
     }
@@ -1299,6 +1298,23 @@
     .coach-info em {
       font-style: italic;
       color: var(--color-text-light);
+    }
+
+    .coach-info h3 {
+      background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .keyword-bold {
+      font-weight: 700;
+      color: var(--color-secondary);
+    }
+
+    .keyword-accent {
+      font-weight: 700;
+      color: var(--color-primary);
     }
 
     @media (max-width: 768px) {
@@ -2058,8 +2074,8 @@
         <div class="coach-visual">📸 Foto de Ricardo</div>
         <div class="coach-info">
           <h3>Ricardo Cañete</h3>
-          <p class="coach-role">Docente • Magíster en Gestión y Liderazgo Educacional • Coach</p>
-          <p>Docente vinculado con colegios, posteriormente en Universidades e institutos profesionales. Diseño programas de coaching orientados a la reflexión y la gestión emocional.</p>
+          <p class="coach-role">Docente • <span class="keyword-accent">Magíster en Gestión y Liderazgo Educacional</span> • Coach</p>
+          <p>Docente vinculado con colegios, posteriormente en Universidades e institutos profesionales. Diseña <span class="keyword-bold">programas de coaching</span> orientados a la <span class="keyword-bold">reflexión</span> y la <span class="keyword-bold">gestión emocional</span>. Con una trayectoria de más de 15 años en educación, ha trabajado con padres, docentes y estudiantes en el fortalecimiento de competencias emocionales y relacionales que transforman dinámicas familiares.</p>
           <p><em>"Transformar la reflexión en acciones que mejoren la vida personal y familiar."</em></p>
         </div>
       </div>
@@ -2069,8 +2085,8 @@
         <div class="coach-visual">📸 Foto de Bárbara</div>
         <div class="coach-info">
           <h3>Bárbara</h3>
-          <p class="coach-role">Relacionadora Pública • Marketing • Coach</p>
-          <p>Especialista en ventas y gestión comercial con experiencia en coordinación de proyectos. Integra comunicación estratégica con énfasis en relaciones de confianza.</p>
+          <p class="coach-role">Relacionadora Pública • <span class="keyword-accent">Marketing</span> • Coach</p>
+          <p>Especialista en <span class="keyword-bold">ventas y gestión comercial</span> con experiencia profunda en coordinación de proyectos estratégicos. Integra <span class="keyword-bold">comunicación efectiva</span> con énfasis en construcción de <span class="keyword-bold">relaciones de confianza</span> duraderas. Su expertise en negociación y resolución de conflictos genera soluciones que aportan valor real a las familias, especialmente en momentos de mayor complejidad relacional.</p>
           <p><em>"Construir relaciones de confianza y generar soluciones que aporten valor."</em></p>
         </div>
       </div>
@@ -2080,8 +2096,8 @@
         <div class="coach-visual">📸 Foto de Alejandra</div>
         <div class="coach-info">
           <h3>Alejandra</h3>
-          <p class="coach-role">Profesora de Inglés • Especialista en Neurocoaching Educativo</p>
-          <p>Profesora de Inglés, coach y especialista en Neurocoaching Educativo y Mindfulness Pedagógico. Magíster en Gestión Pedagógica y Curricular, con amplia experiencia docente. Experta en metodologías para educación inicial, escolar y universitaria, integra la enseñanza del idioma con el desarrollo socioemocional, promoviendo el aprendizaje integral, el bienestar y el liderazgo emocional.</p>
+          <p class="coach-role">Profesora de Inglés • <span class="keyword-accent">Especialista en Neurocoaching Educativo</span></p>
+          <p>Profesora de Inglés, coach y especialista en <span class="keyword-bold">Neurocoaching Educativo</span> y <span class="keyword-bold">Mindfulness Pedagógico</span>. Magíster en Gestión Pedagógica y Curricular, con amplia experiencia docente en contextos diversos. Experta en <span class="keyword-bold">metodologías innovadoras</span> para educación inicial, escolar y universitaria. Integra la enseñanza del idioma con el <span class="keyword-bold">desarrollo socioemocional</span>, promoviendo el aprendizaje integral, el bienestar holístico y el <span class="keyword-bold">liderazgo emocional</span> en padres e hijos.</p>
         </div>
       </div>
 
@@ -2090,8 +2106,8 @@
         <div class="coach-visual">📸 Foto de Rodrigo</div>
         <div class="coach-info">
           <h3>Rodrigo</h3>
-          <p class="coach-role">Ingeniero Comercial • Coach Estratégico</p>
-          <p>Ingeniero Comercial con más de cinco años de experiencia en gestión, liderazgo y transformación estratégica en Chile, además de experiencia internacional en Alemania. Actualmente se desempeña como coordinador nacional de recaudación en una importante fundación. Experto en diseño de procesos de seguimiento, análisis de resultados y evaluaciones. Su formación en coaching, junto con su capacidad de escucha, comunicación interpersonal y análisis, le permite acompañar a los participantes en la organización de objetivos, toma de decisiones y transformación de reflexiones en acciones concretas. Desde una mirada estratégica y práctica, contribuye al seguimiento del proceso, identificación de avances y construcción de compromisos sostenibles que fortalezcan la comunicación y el vínculo familiar.</p>
+          <p class="coach-role">Ingeniero Comercial • <span class="keyword-accent">Coach Estratégico</span></p>
+          <p>Ingeniero Comercial con más de cinco años de experiencia en <span class="keyword-bold">gestión</span>, <span class="keyword-bold">liderazgo</span> y <span class="keyword-bold">transformación estratégica</span> en Chile, además de experiencia internacional en Alemania. Actualmente coordinador nacional de recaudación en una importante fundación. Experto en <span class="keyword-bold">diseño de procesos</span>, análisis de resultados y evaluaciones. Su formación en coaching, junto con su capacidad de <span class="keyword-bold">escucha profunda</span>, comunicación interpersonal y análisis estratégico, le permite acompañar a participantes en la organización de objetivos y <span class="keyword-bold">transformación de reflexiones en acciones concretas</span>. Desde una mirada práctica, contribuye al seguimiento efectivo del proceso, identificación clara de avances y construcción de compromisos sostenibles que fortalezcan la comunicación y el vínculo familiar.</p>
         </div>
       </div>
 
