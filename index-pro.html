@@ -585,10 +585,22 @@
     }
 
     .problema-grid {
+      display: block;
+    }
+
+    .problema-secuencia {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: var(--spacing-3xl);
-      align-items: center;
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--spacing-md);
+      margin-top: var(--spacing-2xl);
+    }
+
+    .problema-secuencia img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-md);
     }
 
     .problema-visual {
@@ -667,6 +679,10 @@
 
     @media (max-width: 768px) {
       .problema-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .problema-secuencia {
         grid-template-columns: 1fr;
       }
 
@@ -1913,13 +1929,20 @@
   <div class="container">
     <span class="section-label">El Problema</span>
     <div class="problema-grid">
-      <div class="problema-visual reveal">
-        📸 Imagen emocional
-      </div>
       <div class="problema-content reveal">
         <h2>No es falta de<br/>comunicación.<br/>Es falta de <span class="highlight">conexión.</span></h2>
         <div class="quote-box">Creemos que estamos escuchando, cuando en realidad solo estamos respondiendo con honestidad.</div>
         <p>Cuando tu hijo(a) avanza en él colegio, algo cambia, la comunicación se vuelve automática y superficial. Ya no comparte, y no sabes cómo revertirlo.</p>
+      </div>
+      <div class="problema-secuencia reveal">
+        <img src="images/problema/01.jpg" alt="Madre hablando con su hija en el sofá: '¿Por qué no me cuentas lo que te pasa?'" loading="lazy">
+        <img src="images/problema/02.jpg" alt="Hijo caminando hacia el colegio mientras su padre se aleja: 'Papá... Papá... pero papá'" loading="lazy">
+        <img src="images/problema/03.jpg" alt="Madre pregunta '¿Cómo te fue en el colegio hoy?' y su hija responde 'Bien.'" loading="lazy">
+        <img src="images/problema/04.jpg" alt="Padre pregunta '¿Tienes prueba?' y '¿Por qué no estás estudiando?'; su hijo responde '¡No quiero!'" loading="lazy">
+        <img src="images/problema/05.jpg" alt="Madre leyendo un documento 'Semana 1' sentada en su sillón, pensativa" loading="lazy">
+        <img src="images/problema/06.jpg" alt="La misma madre se pregunta qué tipo de comunicación la representa y si está escuchando lo suficiente" loading="lazy">
+        <img src="images/problema/07.jpg" alt="Familia conversando en el sofá: '¿Cómo te fue en el colegio hoy?' '¡Tengo algo que contarles!' '¡Yo también!'" loading="lazy">
+        <img src="images/problema/08.jpg" alt="Familia caminando juntos hacia el colegio" loading="lazy">
       </div>
     </div>
   </div>
@@ -2159,7 +2182,7 @@
     <h2>Lo que <span class="highlight">inviertes</span> en 4 semanas</h2>
     
     <div class="precio-box reveal">
-      <div class="precio-amount">USD 35.50</div>
+      <div class="precio-amount">$33.500 CLP</div>
       <div class="precio-description">Acceso de 4 semanas al programa + comunidad + acompañamiento</div>
     </div>
 
@@ -2167,7 +2190,7 @@
       ✓ Si después de revisar los 4 tomos sientes que no es lo que esperabas, te devolvemos tu dinero. Sin preguntas.
     </div>
 
-    <p class="precio-note">Una sesión individual de coaching cuesta USD 40-70. Aquí tienes 4 semanas completas.</p>
+    <p class="precio-note">Una sesión individual de coaching cuesta entre $38.000 y $66.000 CLP. Aquí tienes 4 semanas completas.</p>
 
     <div class="beneficios-exclusivos">
       <h3 class="beneficios-titulo">✨ Qué te llevas por este valor</h3>
