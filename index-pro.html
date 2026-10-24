@@ -6,7 +6,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="cache-control" content="no-cache, no-store, must-revalidate">
   <meta name="build" content="2026-08-08T14:30:00Z">
-  <title>Cosoulutions - Reconstruir la conexión</title>
+  <title>Cosoulutions | Reconecta con tu hija(o) en 4 semanas</title>
+  <meta name="description" content="4 guías en PDF y una sesión mensual en vivo con coaches para volver a conectar con tu hija(o) adolescente. Pago único $33.500 CLP.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_CL">
+  <meta property="og:title" content="¿Tu hija(o) dejó de contarte lo que le pasa en el colegio?">
+  <meta property="og:description" content="4 guías en PDF + una sesión mensual en vivo con coaches. Reconstruye la conexión a tu ritmo.">
+  <meta property="og:image" content="https://danielgamflo.github.io/coachsoultions-landing/images/tomos-hero-v3.png">
+  <meta name="theme-color" content="#0052CC">
   <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
   <link rel="icon" type="image/png" sizes="512x512" href="images/isologo-512.png">
   <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
@@ -1889,6 +1896,383 @@
       box-shadow: 0 0 0 3px rgba(255, 102, 51, 0.1);
       transition: all var(--transition-fast);
     }
+
+    /* ===== OPTIMIZACIÓN DE CONVERSIÓN ===== */
+    section[id] { scroll-margin-top: 72px; }
+
+    .btn-primary, .btn-secondary { min-height: 48px; }
+
+    .hero-trust {
+      margin-top: var(--spacing-lg);
+      font-size: 14px;
+      color: var(--color-text-muted);
+      font-weight: 500;
+      text-align: center;
+    }
+
+    .hero-trust span { white-space: nowrap; }
+
+    /* Problema: pista de deslizar y puente a la solución */
+    .problema-hint { display: none; }
+
+    .problema-bridge {
+      text-align: center;
+      margin-top: var(--spacing-3xl);
+    }
+
+    .problema-bridge p {
+      font-size: clamp(18px, 2.4vw, 24px);
+      font-weight: 600;
+      color: var(--color-text);
+      margin-bottom: var(--spacing-lg);
+    }
+
+    @media (max-width: 768px) {
+      .problema-hint {
+        display: block;
+        text-align: center;
+        font-size: 13px;
+        font-weight: 600;
+        color: var(--color-text-muted);
+        margin-top: var(--spacing-lg);
+      }
+
+      .problema-secuencia {
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        scroll-padding-inline: var(--spacing-xl);
+        gap: var(--spacing-md);
+        margin: var(--spacing-md) calc(-1 * var(--spacing-xl)) 0;
+        padding: 0 var(--spacing-xl) var(--spacing-md);
+        scrollbar-width: none;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      .problema-secuencia::-webkit-scrollbar { display: none; }
+
+      .problema-secuencia img {
+        flex: 0 0 82vw;
+        width: 82vw;
+        scroll-snap-align: center;
+      }
+    }
+
+    /* Cómo funciona */
+    .como {
+      padding: var(--spacing-3xl) 0;
+      background: #fff;
+      text-align: center;
+    }
+
+    .como h2 {
+      font-size: clamp(28px, 4vw, 42px);
+      font-weight: 800;
+      color: var(--color-section-1);
+      margin-bottom: var(--spacing-2xl);
+      letter-spacing: 0.5px;
+    }
+
+    .como h2 .highlight { color: var(--color-primary); }
+
+    .como-steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--spacing-lg);
+      max-width: 1040px;
+      margin: 0 auto var(--spacing-3xl);
+      text-align: left;
+    }
+
+    .como-step {
+      background: var(--color-light);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-xl);
+      padding: var(--spacing-xl);
+    }
+
+    .como-step .paso {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--color-primary);
+      color: #fff;
+      display: grid;
+      place-items: center;
+      font-weight: 800;
+      margin-bottom: var(--spacing-md);
+    }
+
+    .como-step h3 {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--color-secondary);
+      margin-bottom: var(--spacing-sm);
+    }
+
+    .como-step p {
+      font-size: 16px;
+      color: var(--color-text-muted);
+      line-height: 1.6;
+    }
+
+    .como-fit {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--spacing-lg);
+      max-width: 1040px;
+      margin: 0 auto;
+      text-align: left;
+    }
+
+    .fit-card {
+      border-radius: var(--radius-xl);
+      padding: var(--spacing-xl);
+      background: #fff;
+      border: 1px solid var(--color-border);
+    }
+
+    .fit-yes { border-top: 4px solid var(--color-accent); }
+    .fit-no { border-top: 4px solid var(--color-text-light); background: var(--color-lighter); }
+
+    .fit-card h3 {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: var(--spacing-md);
+    }
+
+    .fit-card ul { list-style: none; }
+
+    .fit-card li {
+      position: relative;
+      padding-left: 28px;
+      margin-bottom: var(--spacing-sm);
+      font-size: 16px;
+      line-height: 1.5;
+      color: var(--color-text-muted);
+    }
+
+    .fit-yes li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: var(--color-accent);
+      font-weight: 800;
+    }
+
+    .fit-no li::before {
+      content: '✕';
+      position: absolute;
+      left: 0;
+      color: var(--color-text-light);
+      font-weight: 800;
+    }
+
+    /* Por dentro de la guía */
+    .preview {
+      padding: var(--spacing-3xl) 0;
+      background: linear-gradient(180deg, #F9F7F3 0%, #FFFFFF 100%);
+      text-align: center;
+    }
+
+    .preview h2 {
+      font-size: clamp(28px, 4vw, 42px);
+      font-weight: 800;
+      color: var(--color-section-3);
+      margin-bottom: var(--spacing-2xl);
+      letter-spacing: 0.5px;
+    }
+
+    .preview h2 .highlight { color: var(--color-primary); }
+
+    .preview-wrap {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--spacing-3xl);
+      align-items: center;
+      max-width: 1040px;
+      margin: 0 auto;
+      text-align: left;
+    }
+
+    .guia-page {
+      background: #fff;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-lg);
+      padding: var(--spacing-xl);
+    }
+
+    .guia-kicker {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--color-primary);
+    }
+
+    .guia-page h3 {
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--color-secondary);
+      margin: 6px 0 var(--spacing-lg);
+    }
+
+    .guia-q {
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .guia-lines {
+      height: 52px;
+      margin-bottom: var(--spacing-lg);
+      background: repeating-linear-gradient(to bottom, transparent 0, transparent 25px, var(--color-border) 25px, var(--color-border) 26px);
+    }
+
+    .preview-copy ul { list-style: none; margin-bottom: var(--spacing-xl); }
+
+    .preview-copy li {
+      position: relative;
+      padding-left: 28px;
+      margin-bottom: var(--spacing-md);
+      font-size: 17px;
+      line-height: 1.55;
+      color: var(--color-text-muted);
+    }
+
+    .preview-copy li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: var(--color-accent);
+      font-weight: 800;
+    }
+
+    .preview-copy li strong { color: var(--color-text); }
+
+    /* Testimonios: solo videos reales */
+    .testimonios-videos {
+      grid-template-columns: repeat(2, minmax(0, 340px));
+      justify-content: center;
+      margin-bottom: 0;
+    }
+
+    @media (max-width: 900px) {
+      .testimonios-videos { grid-template-columns: minmax(0, 340px); }
+    }
+
+    /* Equipo */
+    .equipo-intro {
+      max-width: 640px;
+      margin: 0 auto var(--spacing-2xl);
+      text-align: center;
+      font-size: 18px;
+      color: var(--color-text-muted);
+    }
+
+    /* Precio */
+    .beneficios-grid.cuatro {
+      max-width: 1100px;
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    @media (max-width: 900px) {
+      .beneficios-grid.cuatro { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 560px) {
+      .beneficios-grid.cuatro { grid-template-columns: 1fr; }
+    }
+
+    .precio-unit {
+      position: relative;
+      z-index: 1;
+      font-size: 16px;
+      opacity: 0.9;
+      margin-bottom: var(--spacing-md);
+    }
+
+    .precio-cta-note {
+      margin-top: var(--spacing-md);
+      font-size: 14px;
+      color: var(--color-text-muted);
+    }
+
+    .garantia {
+      font-size: 15px;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* CTA final y pie */
+    .cta-final-trust {
+      margin-top: var(--spacing-lg);
+      font-size: 14px;
+      opacity: 0.85;
+    }
+
+    .footer-note {
+      font-size: 13px;
+      opacity: 0.8;
+      margin: var(--spacing-xs) 0;
+    }
+
+    /* Barra de compra fija (móvil) */
+    .sticky-cta {
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 900;
+      display: none;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--spacing-md);
+      padding: 10px var(--spacing-md) calc(10px + env(safe-area-inset-bottom));
+      background: rgba(255, 255, 255, 0.97);
+      backdrop-filter: blur(10px);
+      border-top: 1px solid var(--color-border);
+      box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.08);
+      transform: translateY(110%);
+      transition: transform 250ms var(--ease-out);
+    }
+
+    .sticky-cta.show { transform: translateY(0); }
+
+    .sticky-cta strong {
+      display: block;
+      white-space: nowrap;
+      font-size: 17px;
+      line-height: 1.2;
+      color: var(--color-text);
+    }
+
+    .sticky-cta span {
+      font-size: 12px;
+      color: var(--color-text-muted);
+    }
+
+    .sticky-cta .btn-primary {
+      padding: 12px 20px;
+      white-space: nowrap;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .sticky-cta { transition: none; }
+    }
+
+    @media (max-width: 900px) {
+      .como-steps { grid-template-columns: 1fr; }
+      .como-fit { grid-template-columns: 1fr; }
+      .preview-wrap { grid-template-columns: 1fr; gap: var(--spacing-2xl); }
+    }
+
+    @media (max-width: 768px) {
+      .sticky-cta { display: flex; }
+      body { padding-bottom: 76px; }
+    }
   </style>
 </head>
 <body>
@@ -1899,12 +2283,12 @@
     <div class="logo"><img src="images/logo-cosoulutions.png" alt="Cosoulutions" width="600" height="50"></div>
     <div class="nav-group">
       <nav class="nav-links">
-        <a href="#tomos">Producto</a>
-        <a href="#mecanismo">Método</a>
+        <a href="#como">Cómo funciona</a>
         <a href="#testimonios">Testimonios</a>
+        <a href="#precio">Precio</a>
         <a href="#faq">Preguntas</a>
       </nav>
-      <button class="btn-header">Comenzar el programa →</button>
+      <button class="btn-header" data-cta>Quiero empezar →</button>
     </div>
     <!-- Hamburger Menu Mobile -->
     <button class="hamburger-menu" id="hamburgerMenu" aria-label="Abrir menú de navegación" aria-expanded="false">
@@ -1917,11 +2301,11 @@
 
 <!-- Mobile Navigation Drawer -->
 <nav class="mobile-nav-drawer" id="mobileNav">
-  <a href="#tomos" class="mobile-nav-link">Producto</a>
-  <a href="#mecanismo" class="mobile-nav-link">Método</a>
+  <a href="#como" class="mobile-nav-link">Cómo funciona</a>
   <a href="#testimonios" class="mobile-nav-link">Testimonios</a>
+  <a href="#precio" class="mobile-nav-link">Precio</a>
   <a href="#faq" class="mobile-nav-link">Preguntas</a>
-  <button class="btn-header" style="width: 100%; margin-top: var(--spacing-lg);">Comenzar el programa →</button>
+  <button class="btn-header" data-cta style="width: 100%; margin-top: var(--spacing-lg);">Quiero empezar →</button>
 </nav>
 
 <!-- HERO -->
@@ -1929,19 +2313,20 @@
   <div class="container" style="display: contents;">
     <div class="hero-content">
       <h1>¿Tu hija(o) dejó de contarte lo que le pasa en el <span class="highlight">colegio</span>?</h1>
-      <p class="hero-subheading">No has perdido esa conexión para siempre. Comprende lo que ocurre en tu cerebro y comienza a reconstruirla en solo 4 semanas.</p>
+      <p class="hero-subheading">No has perdido esa conexión para siempre. Con 4 guías en PDF y una sesión mensual en vivo con un coach, aprendes a escuchar de una forma que invita a tu hija(o) a volver a hablarte.</p>
       <div class="hero-cta-group">
-        <button class="btn-primary">Comenzar el programa →</button>
-        <button class="btn-secondary">Ver cómo funciona</button>
+        <button class="btn-primary" data-cta>Quiero empezar →</button>
+        <button class="btn-secondary" data-goto="#como">Ver cómo funciona</button>
       </div>
+      <p class="hero-trust"><span>Pago único $33.500 CLP</span> · <span>Descarga inmediata</span> · <span>Garantía de devolución</span></p>
     </div>
 
     <div style="text-align: center; margin-bottom: var(--spacing-2xl); width: 100%;">
-      <p style="color: var(--color-text-muted); font-size: 14px; font-weight: 500;">4 módulos interactivos • 1 semana cada uno</p>
+      <p style="color: var(--color-text-muted); font-size: 14px; font-weight: 500;">4 guías en PDF • 1 por semana • Sesión mensual en vivo</p>
     </div>
 
     <div class="tomos-container" id="tomos">
-      <img src="images/tomos-hero-v3.png" alt="4 tomos: Reconocer tu estilo, Comprender su mundo, Escuchar desde el corazón, Crear nuevos hábitos" class="tomos-image">
+      <img src="images/tomos-hero-v3.png" alt="Las 4 guías del programa: Reconocer tu estilo, Comprender su mundo, Escuchar con el corazón y Crear hábitos" class="tomos-image">
     </div>
   </div>
 </section>
@@ -1956,6 +2341,7 @@
         <div class="quote-box">Creemos que estamos escuchando, cuando en realidad solo estamos respondiendo con honestidad.</div>
         <p>Cuando tu hijo(a) avanza en él colegio, algo cambia, la comunicación se vuelve automática y superficial. Ya no comparte, y no sabes cómo revertirlo.</p>
       </div>
+      <p class="problema-hint">Desliza para ver la historia →</p>
       <div class="problema-secuencia reveal">
         <img src="images/problema/01.jpg" alt="Madre hablando con su hija en el sofá: '¿Por qué no me cuentas lo que te pasa?'" loading="lazy">
         <img src="images/problema/02.jpg" alt="Hijo caminando hacia el colegio mientras su padre se aleja: 'Papá... Papá... pero papá'" loading="lazy">
@@ -1965,6 +2351,10 @@
         <img src="images/problema/06.jpg" alt="La misma madre se pregunta qué tipo de comunicación la representa y si está escuchando lo suficiente" loading="lazy">
         <img src="images/problema/07.jpg" alt="Familia conversando en el sofá: '¿Cómo te fue en el colegio hoy?' '¡Tengo algo que contarles!' '¡Yo también!'" loading="lazy">
         <img src="images/problema/08.jpg" alt="Familia caminando juntos hacia el colegio" loading="lazy">
+      </div>
+      <div class="problema-bridge reveal">
+        <p>¿Te reconoces en alguna de estas escenas? Se puede cambiar.</p>
+        <button class="btn-primary" data-goto="#como">Ver cómo funciona →</button>
       </div>
     </div>
   </div>
@@ -2000,15 +2390,60 @@
   </div>
 </section>
 
+<!-- COMO FUNCIONA -->
+<section class="como" id="como">
+  <div class="container">
+    <span class="section-label">Cómo funciona</span>
+    <h2>Así trabajas, <span class="highlight">paso a paso</span></h2>
+
+    <div class="como-steps">
+      <div class="como-step reveal">
+        <div class="paso">1</div>
+        <h3>Descargas tus guías</h3>
+        <p>Al pagar recibes por correo las 4 guías en PDF, al instante. Puedes leerlas en pantalla o imprimirlas.</p>
+      </div>
+      <div class="como-step reveal">
+        <div class="paso">2</div>
+        <h3>Respondes en una hoja en blanco</h3>
+        <p>Cada semana lees una guía y respondes sus preguntas por escrito, a tu ritmo. Escribir te obliga a pensar con calma y descubrir lo que realmente piensas.</p>
+      </div>
+      <div class="como-step reveal">
+        <div class="paso">3</div>
+        <h3>Lo analizas con un coach</h3>
+        <p>Una vez al mes nos juntamos por Google Meet, con otros padres y madres. El coach no te da la solución: te hace las preguntas para que la encuentres tú.</p>
+      </div>
+    </div>
+
+    <div class="como-fit">
+      <div class="fit-card fit-yes reveal">
+        <h3>Es para ti si…</h3>
+        <ul>
+          <li>Quieres entender qué pasó y qué puedes cambiar tú.</li>
+          <li>Estás dispuesto(a) a escribir y reflexionar con honestidad.</li>
+          <li>Prefieres encontrar tus propias respuestas antes que recibir recetas.</li>
+        </ul>
+      </div>
+      <div class="fit-card fit-no reveal">
+        <h3>No es para ti si…</h3>
+        <ul>
+          <li>Buscas una solución rápida sin trabajo personal.</li>
+          <li>Necesitas atención psicológica o médica: esto no es terapia ni la reemplaza.</li>
+          <li>Esperas que alguien te diga exactamente qué hacer.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- SEMANAS -->
-<section class="semanas">
+<section class="semanas" id="guias">
   <div class="container">
     <span class="section-label">El Proceso</span>
     <div class="semanas-sticky-wrapper">
       <div class="semanas-left">
         <h2>4 semanas para <span class="highlight">reconstruir</span> la conexión</h2>
         <div class="semanas-left-sticky">
-          <p>Cada semana tiene un enfoque específico diseñado para reconstituir la conexión paso a paso. Trabajarás en ti mismo mientras creas espacios seguros para que tu hijo vuelva a compartir.</p>
+          <p>Cada guía se trabaja en una semana, aunque puedes tomarte más tiempo si lo necesitas. Reflexionas sobre ti mientras creas espacios seguros para que tu hija(o) vuelva a compartir.</p>
         </div>
         <div class="semanas-note">
           ✨ 50 preguntas secuenciales e integradas • Reflexiones profundas • Tareas prácticas semanales
@@ -2040,17 +2475,46 @@
   </div>
 </section>
 
+<!-- POR DENTRO DE LA GUIA -->
+<section class="preview">
+  <div class="container">
+    <span class="section-label">Por dentro</span>
+    <h2>Así se ve una <span class="highlight">guía de trabajo</span></h2>
+    <div class="preview-wrap">
+      <div class="guia-page reveal" aria-label="Ejemplo de una página de la guía de la Semana 1">
+        <div class="guia-kicker">Semana 1</div>
+        <h3>Reconocer mi estilo de comunicación</h3>
+        <p class="guia-q">1. ¿Qué tipo de comunicación me representa mejor?</p>
+        <div class="guia-lines"></div>
+        <p class="guia-q">2. ¿Qué puedo mejorar para conectar más con mis hijos?</p>
+        <div class="guia-lines"></div>
+        <p class="guia-q">3. ¿Estoy escuchando lo suficiente?</p>
+        <div class="guia-lines"></div>
+      </div>
+      <div class="preview-copy reveal">
+        <ul>
+          <li><strong>Preguntas para pensar, no para resolver.</strong> Ninguna tiene una respuesta correcta.</li>
+          <li><strong>Un espacio para escribir</strong> en tu dispositivo, impreso o en una hoja en blanco.</li>
+          <li><strong>Una tarea práctica</strong> para llevar la reflexión a tu día a día.</li>
+          <li><strong>Es privado.</strong> Lo que escribes es tuyo; en la sesión mensual compartes solo lo que quieras.</li>
+        </ul>
+        <button class="btn-primary" data-cta>Quiero empezar →</button>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- TESTIMONIOS -->
 <section class="testimonios" id="testimonios">
   <div class="container">
-    <span class="section-label">Resultados Reales</span>
-    <h2>Papás y mamás que <span class="highlight">lo lograron</span></h2>
+    <span class="section-label">Testimonios</span>
+    <h2>Lo que <span class="highlight">cuentan</span> quienes lo vivieron</h2>
 
-    <!-- Videos Verticales -->
+    <!-- Videos verticales (solo casos reales) -->
     <div class="testimonios-videos">
       <div class="video-item">
         <div class="video-vertical scroll-animate">
-          <video controls playsinline class="video-player">
+          <video controls playsinline preload="metadata" class="video-player">
             <source src="images/testimonios-01.mp4" type="video/mp4">
             Tu navegador no soporta videos
           </video>
@@ -2059,86 +2523,12 @@
       </div>
       <div class="video-item">
         <div class="video-vertical scroll-animate">
-          <video controls playsinline class="video-player">
+          <video controls playsinline preload="metadata" class="video-player">
             <source src="images/testimonios-02.mp4" type="video/mp4">
             Tu navegador no soporta videos
           </video>
         </div>
         <p class="video-label">Caso de Ximena</p>
-      </div>
-      <div class="video-item">
-        <div class="video-vertical scroll-animate">
-          <div class="video-placeholder">
-            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M16 10v28l20-14-20-14z" fill="currentColor" opacity="0.6"/>
-            </svg>
-            <p>Próximamente</p>
-          </div>
-        </div>
-        <p class="video-label">Caso de Carolina</p>
-      </div>
-      <div class="video-item">
-        <div class="video-vertical scroll-animate">
-          <div class="video-placeholder">
-            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M16 10v28l20-14-20-14z" fill="currentColor" opacity="0.6"/>
-            </svg>
-            <p>Próximamente</p>
-          </div>
-        </div>
-        <p class="video-label">Caso de Andrés</p>
-      </div>
-    </div>
-
-    <h3 style="font-size: 24px; color: var(--color-text); margin-bottom: var(--spacing-2xl); font-weight: 600;">Historias de transformación</h3>
-
-    <div class="testimonios-grid">
-      <div class="testimonio-card reveal scroll-animate">
-        <div class="testimonio-header">
-          <div class="testimonio-avatar">MB</div>
-          <div class="testimonio-info">
-            <h3>Marcela Bravo</h3>
-            <p class="role">Mamá de Tomás (14 años)</p>
-          </div>
-        </div>
-        <p class="testimonio-text">"Después de 6 meses sin que mi hijo me contara nada, en 2 semanas ya estaba compartiendo. No cambié yo, cambió cómo escucho."</p>
-        <div class="stars">★★★★★</div>
-      </div>
-
-      <div class="testimonio-card reveal scroll-animate">
-        <div class="testimonio-header">
-          <div class="testimonio-avatar">JR</div>
-          <div class="testimonio-info">
-            <h3>Juan Rojas</h3>
-            <p class="role">Papá de Sofía (13 años)</p>
-          </div>
-        </div>
-        <p class="testimonio-text">"No esperaba que funcionara tan rápido. Los primeros días pensé que era casualidad. Pero después de la semana 3, entendí: era consistencia."</p>
-        <div class="stars">★★★★★</div>
-      </div>
-
-      <div class="testimonio-card reveal scroll-animate">
-        <div class="testimonio-header">
-          <div class="testimonio-avatar">CR</div>
-          <div class="testimonio-info">
-            <h3>Catalina Rodríguez</h3>
-            <p class="role">Mamá de dos (12 y 15 años)</p>
-          </div>
-        </div>
-        <p class="testimonio-text">"Trabajaba tanto que perdí la conexión con mis hijos. Esto me devolvió el tiempo de calidad que necesitaba."</p>
-        <div class="stars">★★★★★</div>
-      </div>
-
-      <div class="testimonio-card reveal scroll-animate">
-        <div class="testimonio-header">
-          <div class="testimonio-avatar">PM</div>
-          <div class="testimonio-info">
-            <h3>Paula Méndez</h3>
-            <p class="role">Mamá de Mateo (14 años)</p>
-          </div>
-        </div>
-        <p class="testimonio-text">"Las preguntas son poderosas. No me dijeron qué hacer, sino cómo pensar diferente. Eso es lo que necesitaba."</p>
-        <div class="stars">★★★★★</div>
       </div>
     </div>
   </div>
@@ -2149,6 +2539,7 @@
   <div class="container">
     <span class="section-label">Quién Te Acompaña</span>
     <h2>Nuestro <span class="highlight">equipo</span></h2>
+    <p class="equipo-intro">Docentes y coaches que te acompañan con preguntas, no con recetas.</p>
     <div class="coaches-grid">
 
       <!-- Ricardo -->
@@ -2198,44 +2589,50 @@
 </section>
 
 <!-- PRECIO -->
-<section class="precio">
+<section class="precio" id="precio">
   <div class="container">
     <span class="section-label">Inversión</span>
-    <h2>Lo que <span class="highlight">inviertes</span> en 4 semanas</h2>
-    
-    <div class="precio-box reveal">
-      <div class="precio-amount">$33.500 CLP</div>
-      <div class="precio-description">Acceso de 4 semanas al programa + comunidad + acompañamiento</div>
-    </div>
+    <h2>Todo lo que <span class="highlight">necesitas</span> para empezar hoy</h2>
 
-    <div class="garantia reveal">
-      ✓ Si después de revisar los 4 tomos sientes que no es lo que esperabas, te devolvemos tu dinero. Sin preguntas.
-    </div>
-
-    <p class="precio-note">Una sesión individual de coaching cuesta entre $38.000 y $66.000 CLP. Aquí tienes 4 semanas completas.</p>
-
-    <div class="beneficios-exclusivos">
-      <h3 class="beneficios-titulo">✨ Qué te llevas por este valor</h3>
-      <div class="beneficios-grid">
+    <div class="beneficios-exclusivos" style="margin-top: 0;">
+      <div class="beneficios-grid cuatro">
         <div class="beneficio-item">
-          <span class="beneficio-icon">📱</span>
-          <h3>Grupo WhatsApp</h3>
-          <p>Acceso exclusivo a comunidad privada para resolver dudas y compartir experiencias</p>
+          <span class="beneficio-icon">📄</span>
+          <h3>4 guías en PDF</h3>
+          <p>Una por semana, con preguntas de reflexión y una tarea práctica. Descarga inmediata.</p>
         </div>
         <div class="beneficio-item">
           <span class="beneficio-icon">🎥</span>
-          <h3>Sesiones GoogleMeet</h3>
-          <p>Una vez al mes, sesión en vivo con Coach para seguimiento de tu progreso</p>
+          <h3>Sesión mensual por Google Meet</h3>
+          <p>Analizas lo que trabajaste con un coach y otros padres. El coach orienta; no da la solución.</p>
         </div>
         <div class="beneficio-item">
-          <span class="beneficio-icon">👨‍🏫</span>
-          <h3>Coach en Vivo</h3>
-          <p>Responde tus preguntas y te acompaña en tu proceso de transformación</p>
+          <span class="beneficio-icon">📱</span>
+          <h3>Grupo de WhatsApp</h3>
+          <p>Avisos de las sesiones y recursos adicionales.</p>
+        </div>
+        <div class="beneficio-item">
+          <span class="beneficio-icon">⏱️</span>
+          <h3>A tu ritmo</h3>
+          <p>Sin horarios fijos. Desde 30 minutos por semana.</p>
         </div>
       </div>
     </div>
 
-    <button class="btn-primary">Comenzar el programa →</button>
+    <div class="precio-box reveal">
+      <div class="precio-amount">$33.500 CLP</div>
+      <div class="precio-unit">Pago único · unos $8.400 por semana</div>
+      <div class="precio-description">4 guías en PDF + sesión mensual en vivo + grupo de avisos</div>
+    </div>
+
+    <button class="btn-primary" data-cta="buy">Quiero mis 4 guías →</button>
+    <p class="precio-cta-note" id="buyNote" hidden>Estamos activando el pago. Muy pronto podrás comprar aquí.</p>
+
+    <div class="garantia reveal">
+      ✓ <strong>Garantía de devolución.</strong> Si durante los primeros 7 días sientes que no es lo que esperabas, te devolvemos tu dinero.
+    </div>
+
+    <p class="precio-note">Una sesión individual de coaching suele costar entre $38.000 y $66.000 CLP. Aquí accedes a 4 guías de trabajo y a una sesión grupal en vivo por una fracción de ese valor.</p>
   </div>
 </section>
 
@@ -2243,87 +2640,95 @@
 <section class="faq" id="faq">
   <div class="container">
     <span class="section-label">Preguntas</span>
-    <h2>Dudas <span class="highlight">Comunes</span></h2>
+    <h2>Dudas <span class="highlight">comunes</span></h2>
 
     <div class="faq-container">
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>¿Esto es terapia o reemplaza a un psicólogo?</span>
+          <div class="faq-icon">+</div>
+        </div>
+        <div class="faq-answer">No. Es un programa de reflexión y coaching: te ayuda a mirar tu forma de comunicarte y a probar nuevas conversaciones. No reemplaza la atención psicológica o médica. Si tu hija(o) o tu familia viven una situación de riesgo, busca apoyo profesional especializado.</div>
+      </div>
+
       <div class="faq-item">
         <div class="faq-question">
           <span>¿Cuánto tiempo debo dedicar cada semana?</span>
           <div class="faq-icon">+</div>
         </div>
-        <div class="faq-answer">Trabaja a tu propio ritmo. Desde 30 minutos hasta varias horas por semana, según tu disponibilidad y cuánto quieras profundizar en cada pregunta. No hay presión de tiempo.</div>
+        <div class="faq-answer">Trabajas a tu propio ritmo: desde 30 minutos hasta un par de horas por semana, según tu disponibilidad y cuánto quieras profundizar en cada pregunta. No hay presión de tiempo.</div>
       </div>
 
       <div class="faq-item">
         <div class="faq-question">
-          <span>¿Recibiré todo de una vez o semana a semana?</span>
+          <span>¿Cómo recibo las guías?</span>
           <div class="faq-icon">+</div>
         </div>
-        <div class="faq-answer">Recibirás los 4 tomos completos al instante. Tú decides el ritmo: puedes hacerlos en 4 semanas o tomarte más tiempo.</div>
+        <div class="faq-answer">Después de tu compra recibes las 4 guías en PDF por correo y en tu área de compras. Puedes descargarlas de inmediato, imprimirlas o trabajar directamente en tu dispositivo.</div>
       </div>
 
       <div class="faq-item">
         <div class="faq-question">
-          <span>¿Qué pasa si no veo resultados?</span>
+          <span>¿Recibo todo de una vez o semana a semana?</span>
           <div class="faq-icon">+</div>
         </div>
-        <div class="faq-answer">La garantía es simple: si después de revisar los 4 tomos no estás satisfecho, te devolvemos tu dinero. Sin preguntas.</div>
+        <div class="faq-answer">Recibes las 4 guías de una vez. La recomendación es trabajar una por semana, pero tú decides el ritmo: puedes hacerlo en 4 semanas o tomarte más tiempo.</div>
       </div>
 
       <div class="faq-item">
         <div class="faq-question">
-          <span>¿Hay soporte adicional o sesiones en vivo?</span>
+          <span>¿Cómo es la sesión mensual en vivo?</span>
           <div class="faq-icon">+</div>
         </div>
-        <div class="faq-answer">Este es un programa de autocoaching + comunidad. Los 4 tomos están diseñados para que reflexiones por ti mismo, y tienes acceso a un grupo WhatsApp privado con otros papás y mamás en el mismo proceso. Además, una vez al mes tienes una sesión grupal en vivo con Ricardo para hacer seguimiento de tu progreso y resolver dudas.</div>
+        <div class="faq-answer">Una vez al mes nos conectamos por Google Meet, junto a otros padres y madres que están en el mismo proceso. Llevas lo que escribiste en las guías y el coach te ayuda con preguntas a ordenar tus ideas y encontrar tus propias respuestas. El coach no da la solución: orienta. Compartes solo lo que quieras.</div>
       </div>
 
       <div class="faq-item">
         <div class="faq-question">
-          <span>¿Cómo se entregan los 4 tomos?</span>
+          <span>¿Qué pasa si no es lo que esperaba?</span>
           <div class="faq-icon">+</div>
         </div>
-        <div class="faq-answer">Los recibirás en PDF y por email después de tu compra. Puedes descargarlos, imprimirlos o trabajar directamente en tu dispositivo.</div>
+        <div class="faq-answer">Si durante los primeros 7 días sientes que el programa no es lo que esperabas, te devolvemos tu dinero.</div>
       </div>
 
       <div class="faq-item">
         <div class="faq-question">
-          <span>¿Funciona si mi hijo tiene TDAH, autismo u otro diagnóstico?</span>
+          <span>¿Funciona si mi hija(o) tiene TDAH, autismo u otro diagnóstico?</span>
           <div class="faq-icon">+</div>
         </div>
-        <div class="faq-answer">Sí. El programa está diseñado para fortalecer la conexión emocional y la comunicación en cualquier contexto. Los enfoques de escucha genuina y presencia son especialmente poderosos cuando hay diagnósticos que afectan la comunicación. Si tu hijo tiene necesidades específicas, el programa es flexible y se adapta a su ritmo.</div>
+        <div class="faq-answer">El programa trabaja tu forma de escuchar y comunicarte, algo que ayuda en cualquier familia. No reemplaza el apoyo de profesionales: si tu hija(o) tiene un diagnóstico, puede complementarlo. Puedes adaptar las preguntas a su ritmo y a su manera de comunicarse.</div>
       </div>
 
       <div class="faq-item">
         <div class="faq-question">
-          <span>¿Qué pasa si mi hijo rechaza completamente hablar conmigo?</span>
+          <span>¿Y si mi hija(o) rechaza hablar conmigo?</span>
           <div class="faq-icon">+</div>
         </div>
-        <div class="faq-answer">Es una situación común. El rechazo muchas veces es un síntoma, no una causa definitiva. El programa te enseña exactamente cómo abrir canales de comunicación desde cero: cómo estar presente sin exigir, cómo crear momentos seguros, y cómo escuchar incluso el silencio. Los primeros pasos son siempre los más poderosos.</div>
+        <div class="faq-answer">Es más común de lo que parece. Muchas veces el silencio es una señal, no una decisión definitiva. El programa te propone preguntas y prácticas para estar presente sin exigir y crear momentos seguros para conversar. Los cambios suelen ser graduales; no prometemos resultados inmediatos.</div>
       </div>
 
       <div class="faq-item">
         <div class="faq-question">
-          <span>¿Garantizan resultados si ya intenté coaching o terapia antes?</span>
+          <span>Ya probé otras cosas. ¿Por qué esto sería distinto?</span>
           <div class="faq-icon">+</div>
         </div>
-        <div class="faq-answer">La diferencia está en el enfoque. Muchos programas trabajan desde afuera hacia adentro. Nosotros trabajamos desde la relación hacia la transformación. Si algo no funcionó antes, probablemente el modelo no era el correcto para tu hijo o tu familia. Aquí cambias tú, y eso genera el espacio para que todo cambie.</div>
+        <div class="faq-answer">Muchos enfoques intentan cambiar al otro. Este parte de ti: de cómo escuchas y de lo que puedes cambiar en tu forma de acompañar. Eso abre espacio para que la relación cambie, a su ritmo.</div>
       </div>
 
       <div class="faq-item">
         <div class="faq-question">
-          <span>¿Es solo para adolescentes o funciona con niños menores?</span>
+          <span>¿Es solo para adolescentes?</span>
           <div class="faq-icon">+</div>
         </div>
-        <div class="faq-answer">El programa está optimizado para padres de adolescentes (12-18 años), que es cuando la desconexión se vuelve más evidente. Dicho esto, los principios funcionan con niños menores que muestren señales de cierre emocional. Puedes adaptarlo a la edad de tu hijo.</div>
+        <div class="faq-answer">Está pensado para madres, padres y cuidadores de adolescentes (12 a 18 años), cuando la desconexión suele hacerse más evidente. Los principios también pueden servir con niños menores que se muestren más cerrados; puedes adaptar las preguntas a su edad.</div>
       </div>
 
       <div class="faq-item">
         <div class="faq-question">
-          <span>¿Qué pasa si mi relación con mi hijo está muy dañada?</span>
+          <span>¿Y si la relación está muy dañada?</span>
           <div class="faq-icon">+</div>
         </div>
-        <div class="faq-answer">Los daños relacionales son sanables. De hecho, muchas de nuestras historias de éxito comenzaron desde lugares muy oscuros: años sin comunicación real, traiciones, incomprensión. Lo que el programa te ofrece es una metodología clara para reconstruir desde los cimientos. No es magia, pero es efectivo.</div>
+        <div class="faq-answer">Una relación dañada también puede mejorar, pero requiere tiempo y constancia. Las guías te dan un camino ordenado para empezar. Si hay violencia o riesgo, busca primero apoyo profesional especializado.</div>
       </div>
     </div>
   </div>
@@ -2332,9 +2737,10 @@
 <!-- CTA FINAL -->
 <section class="cta-final">
   <div class="container">
-    <h2>Tu hijo necesita que <span class="highlight">empieces hoy</span></h2>
-    <p>No necesitas estar "listo". Necesitas estar dispuesto.</p>
-    <button class="btn-primary">Comenzar el programa →</button>
+    <h2>El primer paso es <span class="highlight">una pregunta</span></h2>
+    <p>No necesitas estar "listo". Necesitas estar dispuesto(a) a escuchar.</p>
+    <button class="btn-primary" data-cta>Quiero empezar →</button>
+    <p class="cta-final-trust">Pago único $33.500 CLP · Descarga inmediata · Garantía de devolución</p>
   </div>
 </section>
 
@@ -2342,9 +2748,19 @@
 <footer>
   <div class="container">
     <p>© 2026 Cosoulutions • Sé tu propio coach</p>
+    <p class="footer-note">Programa de reflexión y coaching. No reemplaza la atención psicológica ni médica.</p>
     <p><a href="#">Privacidad</a> • <a href="#">Términos</a> • <a href="#">Contacto</a></p>
   </div>
 </footer>
+
+<!-- BARRA DE COMPRA FIJA (móvil) -->
+<div class="sticky-cta" id="stickyCta">
+  <div>
+    <strong>$33.500 CLP</strong>
+    <span>Pago único</span>
+  </div>
+  <button class="btn-primary" data-cta>Quiero empezar</button>
+</div>
 
 <!-- SCRIPTS -->
 <script>
@@ -2395,6 +2811,49 @@
       }
     });
   });
+
+  // ---- Conversión: CTAs y barra fija ----
+  // Pega aquí el enlace de compra de Hotmart cuando esté listo.
+  const CHECKOUT_URL = '';
+
+  function goToCheckout(e) {
+    if (CHECKOUT_URL) {
+      window.location.href = CHECKOUT_URL;
+      return;
+    }
+    const precio = document.getElementById('precio');
+    const inPrecio = e && e.currentTarget && e.currentTarget.dataset.cta === 'buy';
+    if (inPrecio) {
+      const note = document.getElementById('buyNote');
+      if (note) note.hidden = false;
+    } else if (precio) {
+      precio.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
+
+  document.querySelectorAll('[data-cta]').forEach(btn => btn.addEventListener('click', goToCheckout));
+  document.querySelectorAll('[data-goto]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const target = document.querySelector(btn.dataset.goto);
+      if (target) target.scrollIntoView({ behavior: 'smooth' });
+    });
+  });
+
+  const stickyCta = document.getElementById('stickyCta');
+  if (stickyCta) {
+    const zones = [document.getElementById('precio'), document.querySelector('.cta-final')].filter(Boolean);
+    const zoneState = new Map();
+    const updateSticky = () => {
+      const inZone = [...zoneState.values()].some(Boolean);
+      stickyCta.classList.toggle('show', window.scrollY > 600 && !inZone);
+    };
+    const zoneObserver = new IntersectionObserver((entries) => {
+      entries.forEach(en => zoneState.set(en.target, en.isIntersecting));
+      updateSticky();
+    });
+    zones.forEach(z => zoneObserver.observe(z));
+    window.addEventListener('scroll', updateSticky, { passive: true });
+  }
 
   // GSAP Animations
   gsap.registerPlugin(ScrollTrigger);
