@@ -522,7 +522,7 @@
     }
 
     .tomos-image {
-      max-width: 60%;
+      max-width: 80%;
       height: auto;
       display: block;
       margin: 0 auto;
@@ -530,7 +530,15 @@
 
     @media (max-width: 768px) {
       .tomos-image {
-        max-width: 85%;
+        max-width: 92%;
+      }
+
+      .hero {
+        gap: var(--spacing-md);
+      }
+
+      .hero [style*="margin-bottom: var(--spacing-2xl)"] {
+        margin-bottom: var(--spacing-sm) !important;
       }
 
       .tomos-container {
@@ -1788,7 +1796,7 @@
     /* RESPONSIVE MOBILE */
     @media (max-width: 768px) {
       .hero {
-        gap: var(--spacing-2xl);
+        gap: var(--spacing-md);
       }
 
       .nav-links {
@@ -1933,7 +1941,7 @@
     </div>
 
     <div class="tomos-container" id="tomos">
-      <img src="images/tomos-hero-v2.png" alt="4 tomos: Reconocer tu estilo, Comprender su mundo, Escuchar desde el corazón, Crear nuevos hábitos" class="tomos-image">
+      <img src="images/tomos-hero-v3.png" alt="4 tomos: Reconocer tu estilo, Comprender su mundo, Escuchar desde el corazón, Crear nuevos hábitos" class="tomos-image">
     </div>
   </div>
 </section>
