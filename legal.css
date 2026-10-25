@@ -83,8 +83,8 @@ body {
 
 .legal .nota {
   background: var(--color-light);
-  border-left: 4px solid var(--color-primary);
-  border-radius: 6px;
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
   padding: 14px 18px;
   margin: 20px 0;
   font-size: 16px;
