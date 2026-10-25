@@ -2219,6 +2219,172 @@
       margin: var(--spacing-xs) 0;
     }
 
+    /* ===== HERO: GUÍAS EN PDF ===== */
+    .guias-hero {
+      position: relative;
+      width: min(100%, 780px);
+      aspect-ratio: 100 / 70;
+      margin: 0 auto;
+      container-type: inline-size;
+    }
+
+    .gglow {
+      position: absolute;
+      inset: 4cqw 2cqw 6cqw;
+      background:
+        radial-gradient(ellipse at 30% 40%, rgba(0, 82, 204, 0.14), transparent 60%),
+        radial-gradient(ellipse at 72% 55%, rgba(255, 102, 51, 0.14), transparent 60%);
+      filter: blur(6px);
+    }
+
+    .gshadow {
+      position: absolute;
+      left: 16cqw;
+      width: 68cqw;
+      bottom: 1cqw;
+      height: 5cqw;
+      background: radial-gradient(ellipse at center, rgba(25, 35, 70, 0.28), transparent 70%);
+      filter: blur(3px);
+    }
+
+    .gcover {
+      position: absolute;
+      left: 37cqw;
+      top: 4cqw;
+      width: 26cqw;
+      height: 35cqw;
+      padding: 2.6cqw 2.3cqw;
+      display: flex;
+      flex-direction: column;
+      border-radius: 0.9cqw 1.7cqw 1.7cqw 0.9cqw;
+      transform-origin: 50% 100%;
+      box-shadow:
+        0 1.4cqw 3cqw rgba(20, 30, 70, 0.30),
+        inset 0.7cqw 0 0.8cqw rgba(255, 255, 255, 0.16),
+        inset -0.4cqw 0 0.6cqw rgba(0, 0, 0, 0.12);
+    }
+
+    .gnum {
+      font-size: 1.45cqw;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      opacity: 0.85;
+    }
+
+    .gtitle {
+      margin-top: 1.6cqw;
+      font-size: 3cqw;
+      font-weight: 800;
+      line-height: 1.12;
+    }
+
+    .gfoot {
+      margin-top: auto;
+      display: flex;
+      align-items: center;
+      gap: 0.9cqw;
+      font-size: 1.3cqw;
+      font-weight: 600;
+      opacity: 0.92;
+    }
+
+    .gfoot img {
+      width: 3.6cqw;
+      height: 3.6cqw;
+      padding: 0.35cqw;
+      border-radius: 50%;
+      background: #fff;
+      object-fit: contain;
+    }
+
+    .gc1 { background: linear-gradient(150deg, #3C60B5, #27428A); color: #fff; z-index: 4; transform: translateX(-27cqw) rotate(-15deg); }
+    .gc2 { background: linear-gradient(150deg, #EE7240, #D9531E); color: #fff; z-index: 3; transform: translateX(-9cqw) rotate(-5deg); }
+    .gc3 { background: linear-gradient(150deg, #FCFBF7, #ECE7DB); color: #1F2E5A; z-index: 2; transform: translateX(9cqw) rotate(5deg); border: 1px solid rgba(0, 0, 0, 0.06); }
+    .gc4 { background: linear-gradient(150deg, #4A8A5E, #356B48); color: #fff; z-index: 1; transform: translateX(27cqw) rotate(15deg); }
+    .gc2, .gc3, .gc4 { padding-left: 5.2cqw; }
+
+    .gtablet {
+      position: absolute;
+      z-index: 6;
+      left: 27cqw;
+      top: 34cqw;
+      width: 46cqw;
+      height: 31cqw;
+      padding: 1.5cqw;
+      border-radius: 2.4cqw;
+      background: linear-gradient(145deg, #2A3042, #12151F);
+      box-shadow:
+        0 2cqw 4cqw rgba(15, 20, 45, 0.38),
+        inset 0 0 0 0.2cqw rgba(255, 255, 255, 0.12);
+      transform: rotate(-1.5deg);
+    }
+
+    .gscreen {
+      height: 100%;
+      padding: 2.2cqw 2.6cqw;
+      border-radius: 1.2cqw;
+      background: #fff;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    .gk {
+      font-size: 1.15cqw;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--color-primary);
+    }
+
+    .gt {
+      margin: 0.5cqw 0 1.6cqw;
+      font-size: 2.1cqw;
+      font-weight: 800;
+      line-height: 1.15;
+      color: var(--color-secondary);
+    }
+
+    .gq {
+      font-size: 1.45cqw;
+      font-weight: 600;
+      line-height: 1.3;
+      color: var(--color-text);
+    }
+
+    .gl {
+      display: block;
+      height: 3.4cqw;
+      margin-bottom: 1.2cqw;
+      background: repeating-linear-gradient(to bottom, transparent 0, transparent 1.6cqw, #DAD7CF 1.6cqw, #DAD7CF 1.75cqw);
+    }
+
+    .gbadge {
+      position: absolute;
+      z-index: 7;
+      right: 3cqw;
+      bottom: 9cqw;
+      padding: 1cqw 2.2cqw;
+      border-radius: 99px;
+      background: var(--color-primary);
+      color: #fff;
+      font-size: 1.7cqw;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      box-shadow: 0 0.8cqw 1.8cqw rgba(255, 102, 51, 0.35);
+      transform: rotate(3deg);
+    }
+
+    @media (max-width: 768px) {
+      .guias-hero { width: 100%; aspect-ratio: 100 / 78; }
+      .gtablet { top: 37cqw; }
+      .gtitle { font-size: 3.3cqw; }
+      .gnum { font-size: 1.6cqw; }
+      .gq { font-size: 1.6cqw; }
+      .gt { font-size: 2.3cqw; }
+    }
+
     /* Barra de compra fija (móvil) */
     .sticky-cta {
       position: fixed;
@@ -2326,7 +2492,44 @@
     </div>
 
     <div class="tomos-container" id="tomos">
-      <img src="images/tomos-hero-v3.png" alt="Las 4 guías del programa: Reconocer tu estilo, Comprender su mundo, Escuchar con el corazón y Crear hábitos" class="tomos-image">
+      <div class="guias-hero" role="img" aria-label="Las 4 guías en PDF del programa: Reconocer tu estilo, Comprender su mundo, Escuchar con el corazón y Crear hábitos, y una tableta mostrando una página con preguntas">
+        <div class="gglow" aria-hidden="true"></div>
+        <div class="gshadow" aria-hidden="true"></div>
+
+        <div class="gcover gc4" aria-hidden="true">
+          <span class="gnum">Semana 4</span>
+          <span class="gtitle">Crear hábitos</span>
+          <span class="gfoot"><img src="images/isologo-512.png" alt="">Guía de trabajo</span>
+        </div>
+        <div class="gcover gc3" aria-hidden="true">
+          <span class="gnum">Semana 3</span>
+          <span class="gtitle">Escuchar con el corazón</span>
+          <span class="gfoot"><img src="images/isologo-512.png" alt="">Guía de trabajo</span>
+        </div>
+        <div class="gcover gc2" aria-hidden="true">
+          <span class="gnum">Semana 2</span>
+          <span class="gtitle">Comprender su mundo</span>
+          <span class="gfoot"><img src="images/isologo-512.png" alt="">Guía de trabajo</span>
+        </div>
+        <div class="gcover gc1" aria-hidden="true">
+          <span class="gnum">Semana 1</span>
+          <span class="gtitle">Reconocer tu estilo</span>
+          <span class="gfoot"><img src="images/isologo-512.png" alt="">Guía de trabajo</span>
+        </div>
+
+        <div class="gtablet" aria-hidden="true">
+          <div class="gscreen">
+            <span class="gk">Semana 1</span>
+            <span class="gt">Reconocer mi estilo de comunicación</span>
+            <span class="gq">1. ¿Qué tipo de comunicación me representa mejor?</span>
+            <span class="gl"></span>
+            <span class="gq">2. ¿Estoy escuchando lo suficiente?</span>
+            <span class="gl"></span>
+          </div>
+        </div>
+
+        <span class="gbadge" aria-hidden="true">PDF · descarga inmediata</span>
+      </div>
     </div>
   </div>
 </section>
@@ -2749,7 +2952,7 @@
   <div class="container">
     <p>© 2026 Cosoulutions • Sé tu propio coach</p>
     <p class="footer-note">Programa de reflexión y coaching. No reemplaza la atención psicológica ni médica.</p>
-    <p><a href="#">Privacidad</a> • <a href="#">Términos</a> • <a href="#">Contacto</a></p>
+    <p><a href="privacidad.html">Privacidad</a> • <a href="terminos.html">Términos</a> • <a href="contacto.html">Contacto</a></p>
   </div>
 </footer>
 
